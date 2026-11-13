@@ -1,0 +1,1209 @@
+if (totalSeconds <= 0) totalSeconds = 24 * 3600;
+                totalSeconds--;
+                const h = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+                const m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+                const s = String(totalSeconds % 60).padStart(2, '0');
+                if (timerEl) timerEl.textContent = `${h}h : ${m}m : ${s}s`;
+            }, 1000);<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Electronics | BLACK FRIDAY - Tu solución digital</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        bf: {
+                            black: '#050507',
+                            dark: '#0c0c10',
+                            card: '#13131a',
+                            orange: '#ff6000',
+                            orangeHover: '#ff7724',
+                            neon: '#ff2a5f',
+                            border: '#23232f'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Efectos visuales Black Friday */
+        .bf-glow-orange {
+            box-shadow: 0 0 25px -5px rgba(255, 96, 0, 0.35);
+        }
+        .bf-glow-neon {
+            box-shadow: 0 0 25px -5px rgba(255, 42, 95, 0.35);
+        }
+        .bf-grid-bg {
+            background-image: linear-gradient(to right, rgba(255, 96, 0, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 96, 0, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff6000;
+        }
+    </style>
+</head>
+<body class="bg-bf-black text-zinc-100 font-sans antialiased selection:bg-bf-orange selection:text-white overflow-x-hidden">
+
+    <!-- Barra Superior Urgente de Black Friday con Cuenta Atrás en Vivo -->
+    <div class="bg-gradient-to-r from-bf-neon via-bf-orange to-bf-neon text-white text-xs sm:text-sm font-extrabold py-2.5 px-4 text-center relative z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+            <span class="tracking-wider uppercase flex items-center gap-1.5">
+                <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
+                🔥 BLACK FRIDAY EN URBAN ELECTRONICS · HASTA -60% DTO
+            </span>
+            <span class="hidden sm:inline text-white/70">|</span>
+            <div class="flex items-center gap-1.5 bg-black/40 px-3 py-0.5 rounded-full border border-white/20 font-mono text-xs sm:text-sm">
+                <span class="text-zinc-200 font-sans font-semibold">TERMINA EN:</span>
+                <span id="countdownTimer" class="text-white font-bold tracking-widest">14h : 38m : 52s</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Principal Estilo PcCom Dark -->
+    <header class="sticky top-0 z-40 bg-bf-dark/95 backdrop-blur-md border-b border-bf-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
+                <!-- Logo Urban Electronics -->
+                <a href="#" class="flex items-center gap-3 shrink-0 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-bf-orange to-bf-neon flex items-center justify-center text-white font-black shadow-lg shadow-bf-orange/30 group-hover:scale-105 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-black text-base sm:text-xl tracking-tight text-white leading-none">
+                            URBAN <span class="text-bf-orange">ELECTRONICS</span>
+                        </span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-bf-neon mt-0.5">
+                            Black Friday Edition
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Barra de Búsqueda Funcional (Desktop) -->
+                <div class="hidden md:flex flex-1 max-w-xl relative">
+                    <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="Buscar PcCom Ready, RTX 4070 Super, Ryzen 7 7800X3D, OLED..."
+                        class="w-full pl-4 pr-12 py-2.5 rounded-xl bg-bf-black border border-bf-border text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-bf-orange focus:ring-1 focus:ring-bf-orange transition-all">
+                    <button onclick="document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" aria-label="Buscar"
+                        class="absolute right-1.5 top-1.5 bottom-1.5 px-3 rounded-lg bg-bf-orange hover:bg-bf-orangeHover text-white flex items-center justify-center transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </button>
+                </div>
+
+                <!-- Acciones Derecha: Contáctanos + Carrito -->
+                <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                    <a href="#contacto" class="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-bf-card hover:bg-zinc-800 border border-bf-border text-xs font-bold text-zinc-200 transition-colors">
+                        <svg class="w-4 h-4 text-bf-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        Contáctanos
+                    </a>
+
+                    <button onclick="toggleCart()" class="relative inline-flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl bg-bf-orange hover:bg-bf-orangeHover text-white font-bold text-xs sm:text-sm shadow-lg shadow-bf-orange/25 transition-all cursor-pointer">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        <span class="hidden sm:inline">Mi Cesta</span>
+                        <span id="cartBadge" class="px-1.5 py-0.5 text-[11px] font-black bg-black text-bf-orange rounded-full">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Barra de búsqueda móvil -->
+            <div class="pb-3 md:hidden">
+                <div class="relative">
+                    <input type="text" oninput="handleSearch(this.value)" placeholder="Buscar productos PcCom Black Friday..."
+                        class="w-full pl-4 pr-10 py-2 rounded-xl bg-bf-black border border-bf-border text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-bf-orange">
+                    <svg class="w-4 h-4 text-zinc-400 absolute right-3.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER BLACK FRIDAY -->
+    <section class="relative bf-grid-bg border-b border-bf-border overflow-hidden">
+        <!-- Resplandores de fondo -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-bf-orange/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-bf-neon/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 text-center">
+            <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-bf-card border border-bf-orange/40 text-xs sm:text-sm font-bold text-bf-orange mb-6 shadow-lg">
+                <span class="px-2 py-0.5 rounded bg-bf-neon text-white text-[10px] font-black uppercase tracking-wider">SEMANA BLACK</span>
+                <span>Los mejores precios en hardware, PcCom y gaming</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase leading-none">
+                URBAN <span class="text-transparent bg-clip-text bg-gradient-to-r from-bf-orange via-amber-400 to-bf-neon">ELECTRONICS</span>
+            </h1>
+
+            <p class="text-xl sm:text-3xl font-extrabold text-zinc-200 tracking-wide uppercase mt-3">
+                Tu solución digital
+            </p>
+
+            <p class="max-w-2xl mx-auto text-zinc-400 text-sm sm:text-base mt-4 leading-relaxed">
+                Equipos <strong class="text-white">PcCom Ready</strong> montados por expertos, tarjetas gráficas de última generación, monitores OLED y chollos relámpago con stock limitado.
+            </p>
+
+            <!-- Botones de Acción Principales -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                <a href="#escaparate" onclick="filterShowcase('ofertas')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-bf-neon to-bf-orange hover:brightness-110 text-white font-black text-sm sm:text-base uppercase tracking-wider shadow-xl shadow-bf-neon/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <span>⚡ Ver Chollos Black Friday</span>
+                </a>
+                <a href="#escaparate" onclick="filterShowcase('catalogo')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-bf-card hover:bg-zinc-800 border border-bf-orange/50 text-white font-bold text-sm sm:text-base transition-all flex items-center justify-center gap-2">
+                    <span>Explorar Catálogo PcCom</span>
+                </a>
+            </div>
+
+            <!-- Insignias de Confianza Tipo PcComponentes -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto mt-12 text-left">
+                <div class="bg-bf-card/90 border border-bf-border rounded-xl p-3.5 flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-bf-orange/15 text-bf-orange flex items-center justify-center shrink-0 font-bold">🚚</div>
+                    <div>
+                        <p class="text-xs font-bold text-white">Envío Gratis 24h</p>
+                        <p class="text-[11px] text-zinc-400">Pedidos desde 50€</p>
+                    </div>
+                </div>
+                <div class="bg-bf-card/90 border border-bf-border rounded-xl p-3.5 flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-bf-neon/15 text-bf-neon flex items-center justify-center shrink-0 font-bold">🛡️</div>
+                    <div>
+                        <p class="text-xs font-bold text-white">Garantía Sustitución</p>
+                        <p class="text-[11px] text-zinc-400">3 años + cambio 24h</p>
+                    </div>
+                </div>
+                <div class="bg-bf-card/90 border border-bf-border rounded-xl p-3.5 flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-bf-orange/15 text-bf-orange flex items-center justify-center shrink-0 font-bold">🎁</div>
+                    <div>
+                        <p class="text-xs font-bold text-white">Devolución Navidad</p>
+                        <p class="text-[11px] text-zinc-400">Ampliada hasta 15 Ene</p>
+                    </div>
+                </div>
+                <div class="bg-bf-card/90 border border-bf-border rounded-xl p-3.5 flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-bf-neon/15 text-bf-neon flex items-center justify-center shrink-0 font-bold">🔧</div>
+                    <div>
+                        <p class="text-xs font-bold text-white">Montaje Experto</p>
+                        <p class="text-[11px] text-zinc-400">Testeo estrés incluido</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUADRÍCULA PRINCIPAL DE 8 BLOQUES (Respetando exactamente el orden y estructura del boceto original) -->
+    <section id="modulos" class="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+            <div>
+                <span class="text-xs font-black uppercase tracking-widest text-bf-orange">Navegación Rápida</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Todo Urban Electronics a un Clic</h2>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-400">Pulsa en cualquier sección para abrir herramientas, catálogos o gestiones.</p>
+        </div>
+
+        <!-- Grid 2 columnas en móvil/tablet, 4 en desktop (Fiel al boceto 2x4) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+
+            <!-- 1. CATÁLOGO -->
+            <div onclick="openModal('catalogo')" class="group cursor-pointer bg-bf-card hover:bg-zinc-900 border border-bf-border hover:border-bf-orange rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 bf-glow-orange flex flex-col justify-between relative overflow-hidden">
+                <span class="absolute top-4 right-4 px-2 py-0.5 text-[10px] font-black uppercase bg-bf-orange/20 text-bf-orange border border-bf-orange/30 rounded">PcCom</span>
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-bf-orange/15 text-bf-orange flex items-center justify-center mb-4 group-hover:bg-bf-orange group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-orange transition-colors">Catálogo</h3>
+                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Ordenadores PcCom Ready, tarjetas gráficas RTX, procesadores Ryzen, portátiles y monitores.</p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-bf-border/60 flex items-center justify-between text-xs font-bold text-bf-orange uppercase">
+                    <span>Explorar familias</span>
+                    <span>→</span>
+                </div>
+            </div>
+
+            <!-- 2. TENDENCIAS -->
+            <div onclick="openModal('tendencias')" class="group cursor-pointer bg-bf-card hover:bg-zinc-900 border border-bf-border hover:border-bf-neon rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 bf-glow-neon flex flex-col justify-between relative overflow-hidden">
+                <span class="absolute top-4 right-4 px-2 py-0.5 text-[10px] font-black uppercase bg-bf-neon/20 text-bf-neon border border-bf-neon/30 rounded">Top Ventas</span>
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-bf-neon/15 text-bf-neon flex items-center justify-center mb-4 group-hover:bg-bf-neon group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-neon transition-colors">Tendencias</h3>
+                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Lo más vendido en PcCom: Ryzen 7 7800X3D, Monitores OLED 240Hz, consolas portátiles y setups.</p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-bf-border/60 flex items-center justify-between text-xs font-bold text-bf-neon uppercase">
+                    <span>Ranking en vivo</span>
+                    <span>→</span>
+                </div>
+            </div>
+
+            <!-- 3. OFERTAS -->
+            <div onclick="openModal('ofertas')" class="group cursor-pointer bg-gradient-to-b from-bf-card to-bf-neon/10 hover:bg-zinc-900 border border-bf-neon/50 hover:border-bf-neon rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 bf-glow-neon flex flex-col justify-between relative overflow-hidden">
+                <span class="absolute top-4 right-4 px-2 py-0.5 text-[10px] font-black uppercase bg-bf-neon text-white rounded animate-pulse">-60% BLACK</span>
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-bf-neon text-white flex items-center justify-center mb-4 shadow-lg shadow-bf-neon/30">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-neon transition-colors">Ofertas</h3>
+                    <p class="text-zinc-300 text-sm mt-2 leading-relaxed">Chollos relámpago Black Friday, stock limitado y cupones descuento exclusivos.</p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-bf-neon/30 flex items-center justify-between text-xs font-black text-bf-neon uppercase">
+                    <span>Ver chollos + cupones</span>
+                    <span>⚡</span>
+                </div>
+            </div>
+
+            <!-- 4. LOCALIZACIÓN -->
+            <div onclick="openModal('localizacion')" class="group cursor-pointer bg-bf-card hover:bg-zinc-900 border border-bf-border hover:border-bf-orange rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-bf-orange/15 text-bf-orange flex items-center justify-center mb-4 group-hover:bg-bf-orange group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-orange transition-colors">Localización</h3>
+                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Tienda física Urban Flagship, horario ampliado especial Black Friday y recogida Click & Collect.</p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-bf-border/60 flex items-center justify-between text-xs font-bold text-bf-orange uppercase">
+                    <span>Mapa y horarios</span>
+                    <span>→</span>
+                </div>
+            </div>
+
+            <!-- 5. MONTAJES (Ortografía corregida de 'montages') -->
+            <div onclick="openModal('montajes')" class="group cursor-pointer bg-bf-card hover:bg-zinc-900 border border-bf-border hover:border-bf-orange rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-bf-orange/15 text-bf-orange flex items-center justify-center mb-4 group-hover:bg-bf-orange group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-orange transition-colors">Montajes</h3>
+                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Configurador y taller PcCom: ensamblaje profesional, gestión de cables y testeo térmico.</p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-bf-border/60 flex items-center justify-between text-xs font-bold text-bf-orange uppercase">
+                    <span>Configurar PC a medida</span>
+                    <span>→</span>
+                </div>
+            </div>
+
+            <!-- 6. GARANTÍAS -->
+            <div onclick="openModal('garantias')" class="group cursor-pointer bg-bf-card hover:bg-zinc-900 border border-bf-border hover:border-bf-neon rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-bf-neon/15 text-bf-neon flex items-center justify-center mb-4 group-hover:bg-bf-neon group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-neon transition-colors">Garantías</h3>
+                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">3 años de garantía oficial, sustitución en 24h por defecto y protección Urban Care.</p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-bf-border/60 flex items-center justify-between text-xs font-bold text-bf-neon uppercase">
+                    <span>Ver coberturas</span>
+                    <span>→</span>
+                </div>
+            </div>
+
+            <!-- 7. DEVOLUCIONES -->
+            <div onclick="openModal('devoluciones')" class="group cursor-pointer bg-bf-card hover:bg-zinc-900 border border-bf-border hover:border-bf-orange rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-bf-orange/15 text-bf-orange flex items-center justify-center mb-4 group-hover:bg-bf-orange group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-orange transition-colors">Devoluciones</h3>
+                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Especial Black Friday y Reyes: plazo ampliado hasta el 15 de enero sin preguntas.</p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-bf-border/60 flex items-center justify-between text-xs font-bold text-bf-orange uppercase">
+                    <span>Tramitar en 3 pasos</span>
+                    <span>→</span>
+                </div>
+            </div>
+
+            <!-- 8. VALÓRANOS -->
+            <div onclick="openModal('valoranos')" class="group cursor-pointer bg-bf-card hover:bg-zinc-900 border border-bf-border hover:border-bf-neon rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-bf-neon/15 text-bf-neon flex items-center justify-center mb-4 group-hover:bg-bf-neon group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-neon transition-colors">Valóranos</h3>
+                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">4.9/5 ★ según más de 1.200 clientes. Lee opiniones verificadas o deja tu reseña en vivo.</p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-bf-border/60 flex items-center justify-between text-xs font-bold text-bf-neon uppercase">
+                    <span>Opiniones y estrellas</span>
+                    <span>★ 4.9</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ESCAPARATE EN VIVO: CATÁLOGO, TENDENCIAS Y OFERTAS BLACK FRIDAY (ESTILO PCCOMPONENTES) -->
+    <section id="escaparate" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-bf-dark border border-bf-border rounded-3xl p-5 sm:p-8 lg:p-10 shadow-2xl">
+            
+            <!-- Cabecera del Escaparate + Pestañas de Filtro -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-bf-border">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded bg-bf-neon text-white text-[11px] font-black uppercase">LIVE BLACK FRIDAY</span>
+                        <span class="text-xs font-bold text-bf-orange uppercase tracking-wider">Selección Oficial PcCom</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white mt-1.5">Catálogo, Tendencias y Chollos</h2>
+                </div>
+
+                <!-- Filtros Principales -->
+                <div class="flex flex-wrap gap-2" id="showcaseTabs">
+                    <button onclick="filterShowcase('todos')" data-filter="todos" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-orange text-white shadow-lg shadow-bf-orange/25 transition-all">
+                        Todos (9)
+                    </button>
+                    <button onclick="filterShowcase('ofertas')" data-filter="ofertas" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🔥 Ofertas Black Friday
+                    </button>
+                    <button onclick="filterShowcase('tendencias')" data-filter="tendencias" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        📈 Tendencias Top Ventas
+                    </button>
+                    <button onclick="filterShowcase('catalogo')" data-filter="catalogo" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🖥️ Catálogo PcCom
+                    </button>
+                </div>
+            </div>
+
+            <!-- Barra de Cupones Rápidos Black Friday -->
+            <div class="my-6 p-4 rounded-2xl bg-gradient-to-r from-bf-orange/15 via-bf-card to-bf-neon/15 border border-bf-orange/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3 text-center sm:text-left">
+                    <span class="text-2xl">🎟️</span>
+                    <div>
+                        <p class="text-sm font-extrabold text-white">Cupones Extra Black Friday activos hoy</p>
+                        <p class="text-xs text-zinc-400">Aplícalos al tramitar tu cesta en equipos PcCom y componentes seleccionados.</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-2">
+                    <button onclick="copyCoupon('URBANBF20')" class="px-3.5 py-2 rounded-xl bg-black border border-dashed border-bf-orange text-bf-orange font-mono font-bold text-xs hover:bg-bf-orange hover:text-white transition-colors cursor-pointer">
+                        URBANBF20 (-20€) 📋
+                    </button>
+                    <button onclick="copyCoupon('PCCOMURBAN15')" class="px-3.5 py-2 rounded-xl bg-black border border-dashed border-bf-neon text-bf-neon font-mono font-bold text-xs hover:bg-bf-neon hover:text-white transition-colors cursor-pointer">
+                        PCCOMURBAN15 (-15%) 📋
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Productos PcCom -->
+            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                <!-- Renderizado dinámico mediante JS -->
+            </div>
+
+            <!-- Estado vacío si la búsqueda no coincide -->
+            <div id="emptySearch" class="hidden py-12 text-center">
+                <p class="text-zinc-400 text-base">No hemos encontrado productos con ese término de búsqueda.</p>
+                <button onclick="resetFilters()" class="mt-4 px-5 py-2 rounded-xl bg-bf-orange text-white text-sm font-bold">
+                    Mostrar todo el catálogo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTÁCTANOS (Bloque inferior protagonista del boceto) -->
+    <section id="contacto" class="py-14 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="relative rounded-3xl bg-gradient-to-b from-bf-card to-bf-black border border-bf-orange/40 p-6 sm:p-12 shadow-2xl bf-glow-orange">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-bf-orange/15 text-bf-orange text-xs font-black uppercase tracking-widest mb-3">
+                    Soporte Técnico & Ventas Black Friday
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">Contáctanos</h2>
+                <p class="text-zinc-400 mt-3 text-sm sm:text-base">
+                    ¿Dudas con la compatibilidad de tu montaje PcCom, disponibilidad de stock Black Friday o garantías? Nuestro equipo de especialistas te responde al instante.
+                </p>
+            </div>
+
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Nombre completo</label>
+                        <input type="text" id="nombre" required placeholder="Ej. Carlos Mendoza"
+                            class="w-full px-4 py-3.5 rounded-xl bg-bf-black border border-bf-border text-white placeholder-zinc-600 focus:outline-none focus:border-bf-orange focus:ring-1 focus:ring-bf-orange transition-colors">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Correo electrónico</label>
+                        <input type="email" id="email" required placeholder="carlos@ejemplo.com"
+                            class="w-full px-4 py-3.5 rounded-xl bg-bf-black border border-bf-border text-white placeholder-zinc-600 focus:outline-none focus:border-bf-orange focus:ring-1 focus:ring-bf-orange transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="asunto" class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Departamento</label>
+                    <select id="asunto"
+                        class="w-full px-4 py-3.5 rounded-xl bg-bf-black border border-bf-border text-white focus:outline-none focus:border-bf-orange focus:ring-1 focus:ring-bf-orange transition-colors">
+                        <option value="ofertas">🔥 Consulta Stock / Ofertas Black Friday</option>
+                        <option value="montajes">🖥️ Presupuesto Montaje PC a Medida (PcCom)</option>
+                        <option value="catalogo">📦 Catálogo y Compatibilidad de Hardware</option>
+                        <option value="garantias">🛡️ Tramitación de Garantías (3 años)</option>
+                        <option value="devoluciones">🔄 Devoluciones Ampliadas (hasta 15 Enero)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Tu consulta</label>
+                    <textarea id="mensaje" rows="4" required placeholder="Indica el modelo de equipo, componentes o número de pedido..."
+                        class="w-full px-4 py-3.5 rounded-xl bg-bf-black border border-bf-border text-white placeholder-zinc-600 focus:outline-none focus:border-bf-orange focus:ring-1 focus:ring-bf-orange transition-colors"></textarea>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3">
+                    <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-400">
+                        <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Técnicos online
+                        </span>
+                        <span>•</span>
+                        <span>soporte@urbanelectronics.es</span>
+                    </div>
+                    <button type="submit"
+                        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-bf-orange to-bf-neon hover:brightness-110 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-bf-orange/25 transition-all cursor-pointer">
+                        Enviar Consulta
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA CON "By fruits.co" -->
+    <footer class="border-t border-bf-border bg-bf-dark py-10 px-4 sm:px-6 lg:px-8 mt-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2.5">
+                <span class="font-black text-white tracking-tight">URBAN <span class="text-bf-orange">ELECTRONICS</span></span>
+                <span class="text-zinc-600">|</span>
+                <span class="text-xs text-zinc-400">Tu solución digital</span>
+            </div>
+
+            <div class="px-4 py-1.5 rounded-full bg-bf-black border border-bf-border text-sm font-bold text-zinc-300">
+                By <span class="text-transparent bg-clip-text bg-gradient-to-r from-bf-orange to-bf-neon font-black">fruits.co</span>
+            </div>
+
+            <div class="text-xs text-zinc-500">
+                © 2026 Urban Electronics · Especial Black Friday
+            </div>
+        </div>
+    </footer>
+
+    <!-- PANEL LATERAL DEL CARRITO DE COMPRAS INTERACTIVO -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+        <div onclick="toggleCart()" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-bf-dark border-l border-bf-border shadow-2xl flex flex-col justify-between p-6">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-bf-border">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl">🛒</span>
+                        <h3 class="text-lg font-black text-white uppercase">Tu Cesta Black Friday</h3>
+                    </div>
+                    <button onclick="toggleCart()" class="w-9 h-9 rounded-xl bg-bf-card hover:bg-zinc-800 text-zinc-300 flex items-center justify-center">✕</button>
+                </div>
+
+                <!-- Lista de artículos en el carrito -->
+                <div id="cartItemsContainer" class="mt-4 space-y-3 max-h-[55vh] overflow-y-auto pr-1">
+                    <!-- Inyectado dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Resumen y Pago -->
+            <div class="pt-4 border-t border-bf-border space-y-4">
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-zinc-400">Envío Exprés Black Friday</span>
+                    <span class="text-emerald-400 font-bold">GRATIS</span>
+                </div>
+                <div class="flex items-center justify-between text-lg font-black text-white">
+                    <span>Total (IVA incl.)</span>
+                    <span id="cartTotal" class="text-bf-orange">0,00 €</span>
+                </div>
+                <button onclick="checkoutCart()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-bf-orange to-bf-neon hover:brightness-110 text-white font-black text-sm uppercase tracking-wider shadow-lg">
+                    Tramitar Pedido Ahora
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL INTERACTIVO PARA LOS 8 MÓDULOS -->
+    <div id="sectionModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-bf-dark border border-bf-border rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeModal()" aria-label="Cerrar"
+                class="sticky top-0 float-right w-9 h-9 rounded-xl bg-bf-card hover:bg-bf-orange text-zinc-300 hover:text-white flex items-center justify-center transition-colors z-10">
+                ✕
+            </button>
+            <div id="modalContent">
+                <!-- Contenido inyectado dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN TOAST (Reemplazo de alert()) -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-bf-card border border-bf-orange text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3">
+            <div class="w-7 h-7 rounded-full bg-bf-orange text-white flex items-center justify-center shrink-0 font-bold text-xs">
+                ✓
+            </div>
+            <p id="toastMessage" class="text-sm font-bold">Producto añadido</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT COMPLETO -->
+    <script>
+        // ==========================================
+        // 1. BASE DE DATOS DE PRODUCTOS ESTILO PCCOM
+        // ==========================================
+        const productsDB = [
+            {
+                id: 'pccom-ready-4070s',
+                name: 'PcCom Ready Intel Core i7-14700KF / 32GB / 2TB SSD / RTX 4070 Super',
+                category: 'catalogo',
+                subCategory: 'Ordenadores PcCom',
+                badge: 'OFERTA FLASH -24%',
+                badgeStyle: 'bg-bf-neon text-white',
+                oldPrice: 2199,
+                price: 1669,
+                discount: '-24%',
+                stockLeft: 4,
+                specs: 'Windows 11 Home · Refrigeración Líquida 240mm · WiFi 6E',
+                isOffer: true,
+                isTrend: true
+            },
+            {
+                id: 'ryzen-7-7800x3d',
+                name: 'AMD Ryzen 7 7800X3D 4.2 GHz / 5 GHz Socket AM5 Box',
+                category: 'tendencias',
+                subCategory: 'Componentes',
+                badge: 'TOP VENTAS #1',
+                badgeStyle: 'bg-bf-orange text-white',
+                oldPrice: 489,
+                price: 369,
+                discount: '-25%',
+                stockLeft: 7,
+                specs: '8 Núcleos · 16 Hilos · Tecnología 3D V-Cache 96MB',
+                isOffer: true,
+                isTrend: true
+            },
+            {
+                id: 'msi-rtx-4080-super',
+                name: 'MSI GeForce RTX 4080 SUPER VENTUS 3X OC 16GB GDDR6X DLSS3',
+                category: 'ofertas',
+                subCategory: 'Tarjetas Gráficas',
+                badge: 'CHOLLO BLACK -22%',
+                badgeStyle: 'bg-bf-neon text-white',
+                oldPrice: 1279,
+                price: 999,
+                discount: '-22%',
+                stockLeft: 3,
+                specs: 'Arquitectura Ada Lovelace · Triple Ventilador TORX 4.0',
+                isOffer: true,
+                isTrend: false
+            },
+            {
+                id: 'asus-rog-oled-240hz',
+                name: 'ASUS ROG Swift OLED PG27AQDM 27" QHD 240Hz 0.03ms G-Sync',
+                category: 'tendencias',
+                subCategory: 'Monitores Gaming',
+                badge: 'TENDENCIA OLED',
+                badgeStyle: 'bg-bf-orange text-white',
+                oldPrice: 1099,
+                price: 749,
+                discount: '-32%',
+                stockLeft: 5,
+                specs: 'Panel WOLED · Disipador térmico personalizado · HDR10',
+                isOffer: true,
+                isTrend: true
+            },
+            {
+                id: 'pccom-revolt-4060',
+                name: 'PcCom Revolt 4060 Intel Core i7-13700H / 32GB / 1TB SSD / RTX 4060 15.6"',
+                category: 'catalogo',
+                subCategory: 'Portátiles Gaming',
+                badge: 'BLACK FRIDAY -30%',
+                badgeStyle: 'bg-bf-neon text-white',
+                oldPrice: 1429,
+                price: 999,
+                discount: '-30%',
+                stockLeft: 6,
+                specs: 'Pantalla 165Hz sRGB 100% · Chasis metálico ultraligero',
+                isOffer: true,
+                isTrend: false
+            },
+            {
+                id: 'msi-b650-tomahawk',
+                name: 'MSI MAG B650 TOMAHAWK WIFI Placa Base Socket AM5 DDR5',
+                category: 'catalogo',
+                subCategory: 'Componentes',
+                badge: 'CATÁLOGO PCCOM',
+                badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40',
+                oldPrice: 249,
+                price: 189,
+                discount: '-24%',
+                stockLeft: 12,
+                specs: 'VRM 14+2+1 fases · PCIe 4.0 · Triple M.2 · Wi-Fi 6E',
+                isOffer: false,
+                isTrend: true
+            },
+            {
+                id: 'wd-black-sn850x-2tb',
+                name: 'WD_BLACK SN850X 2TB Disco SSD 7300MB/s NVMe PCIe 4.0 M.2',
+                category: 'ofertas',
+                subCategory: 'Almacenamiento',
+                badge: 'PRECIO MÍNIMO -48%',
+                badgeStyle: 'bg-bf-neon text-white',
+                oldPrice: 249,
+                price: 129,
+                discount: '-48%',
+                stockLeft: 5,
+                specs: 'Compatible con PC y PS5 · Game Mode 2.0 predictivo',
+                isOffer: true,
+                isTrend: true
+            },
+            {
+                id: 'lenovo-legion-go',
+                name: 'Lenovo Legion Go Consola Portátil AMD Ryzen Z1 Extreme / 16GB / 512GB',
+                category: 'tendencias',
+                subCategory: 'Consolas Portátiles',
+                badge: 'VIRAL GAMING',
+                badgeStyle: 'bg-bf-orange text-white',
+                oldPrice: 799,
+                price: 599,
+                discount: '-25%',
+                stockLeft: 4,
+                specs: 'Pantalla táctil 8.8" QHD+ 144Hz · Mandos extraíbles FPS',
+                isOffer: true,
+                isTrend: true
+            },
+            {
+                id: 'newskill-kitsune-v2',
+                name: 'Newskill Kitsune V2 Silla Gaming Ergonómica Reclinable Negra/Naranja',
+                category: 'ofertas',
+                subCategory: 'Periféricos & Sillas',
+                badge: 'CHOLLO -52%',
+                badgeStyle: 'bg-bf-neon text-white',
+                oldPrice: 249,
+                price: 119,
+                discount: '-52%',
+                stockLeft: 3,
+                specs: 'Pistón Clase 4 · Cojines lumbar y cervical viscoelásticos',
+                isOffer: true,
+                isTrend: false
+            }
+        ];
+
+        // Estado del carrito y reseñas en vivo
+        let cart = [];
+        let currentFilter = 'todos';
+        let currentSearch = '';
+        let reviewsList = [
+            { author: 'Javi_Gamer99', rating: 5, comment: 'Compré el PcCom Ready con RTX 4070 Super en Black Friday y llegó en 24h montado de 10. Cableado impecable.', date: 'Hace 2 horas' },
+            { author: 'Elena R.', rating: 5, comment: 'El monitor OLED de 240Hz a precio de chollo. Muy buena atención en el chat técnico.', date: 'Ayer' },
+            { author: 'Marcos_Tech', rating: 5, comment: 'Pedi montaje a medida con Ryzen 7 7800X3D y me enviaron captura del test de estrés antes del envío.', date: 'Hace 3 días' }
+        ];
+
+        // ==========================================
+        // 2. RENDERIZADO DEL ESCAPARATE PCCOM
+        // ==========================================
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const emptyState = document.getElementById('emptySearch');
+
+            const filtered = productsDB.filter(p => {
+                const matchesTab =
+                    currentFilter === 'todos' ||
+                    (currentFilter === 'ofertas' && p.isOffer) ||
+                    (currentFilter === 'tendencias' && p.isTrend) ||
+                    (currentFilter === 'catalogo' && p.category === 'catalogo');
+
+                const query = currentSearch.toLowerCase().trim();
+                const matchesSearch =
+                    !query ||
+                    p.name.toLowerCase().includes(query) ||
+                    p.subCategory.toLowerCase().includes(query) ||
+                    p.specs.toLowerCase().includes(query);
+
+                return matchesTab && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = filtered.map(product => {
+                const stockPercent = Math.min(100, product.stockLeft * 12);
+                return `
+                <article class="bg-bf-card border border-bf-border hover:border-bf-orange/70 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                    <div>
+                        <!-- Etiquetas superiores -->
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-lg text-[11px] font-black uppercase tracking-wider ${product.badgeStyle}">
+                                ${product.badge}
+                            </span>
+                            <span class="text-xs font-semibold text-zinc-400">${product.subCategory}</span>
+                        </div>
+
+                        <!-- Nombre y Specs -->
+                        <h3 class="text-base sm:text-lg font-extrabold text-white group-hover:text-bf-orange transition-colors leading-snug">
+                            ${product.name}
+                        </h3>
+                        <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                            ${product.specs}
+                        </p>
+
+                        <!-- Barra de Stock Limitado Black Friday -->
+                        <div class="mt-4">
+                            <div class="flex justify-between text-[11px] font-bold mb-1">
+                                <span class="text-bf-neon">🔥 ¡Quedan ${product.stockLeft} unidades!</span>
+                                <span class="text-zinc-400">Envío 24h</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-black rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-bf-neon to-bf-orange rounded-full" style="width: ${stockPercent}%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Precio y Botón Añadir -->
+                    <div class="mt-5 pt-4 border-t border-bf-border flex items-end justify-between gap-3">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs text-zinc-500 line-through">${product.oldPrice} €</span>
+                                <span class="px-1.5 py-0.5 rounded bg-bf-neon/20 text-bf-neon text-[11px] font-black">${product.discount}</span>
+                            </div>
+                            <span class="text-2xl sm:text-3xl font-black text-white tracking-tight">${product.price} €</span>
+                        </div>
+
+                        <button onclick="addToCart('${product.id}')"
+                            class="px-4 py-2.5 rounded-xl bg-bf-orange hover:bg-bf-orangeHover text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-bf-orange/20 transition-all cursor-pointer shrink-0">
+                            + Añadir
+                        </button>
+                    </div>
+                </article>
+                `;
+            }).join('');
+        }
+
+        function filterShowcase(filterType) {
+            currentFilter = filterType;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.getAttribute('data-filter') === filterType) {
+                    btn.className = 'filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-orange text-white shadow-lg shadow-bf-orange/25 transition-all';
+                } else {
+                    btn.className = 'filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all';
+                }
+            });
+            renderProducts();
+        }
+
+        function handleSearch(value) {
+            currentSearch = value;
+            renderProducts();
+        }
+
+        function resetFilters() {
+            currentSearch = '';
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.value = '';
+            filterShowcase('todos');
+        }
+
+        // ==========================================
+        // 3. CARRITO DE COMPRAS INTERACTIVO
+        // ==========================================
+        function addToCart(productId) {
+            const product = productsDB.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            showToast(`Añadido: ${product.name.slice(0, 35)}...`);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const container = document.getElementById('cartItemsContainer');
+            const totalEl = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+            const totalPrice = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+
+            badge.textContent = totalItems;
+            totalEl.textContent = `${totalPrice.toLocaleString('es-ES')} €`;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="py-12 text-center">
+                        <p class="text-zinc-400 text-sm">Tu cesta está vacía.</p>
+                        <p class="text-xs text-zinc-500 mt-1">Aprovecha los chollos Black Friday antes de que vuelen.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="p-3.5 rounded-xl bg-bf-card border border-bf-border flex items-start justify-between gap-3">
+                    <div>
+                        <p class="text-xs font-bold text-white leading-snug">${item.name}</p>
+                        <p class="text-xs text-bf-orange font-extrabold mt-1">${item.qty} x ${item.price} €</p>
+                    </div>
+                    <button onclick="removeFromCart('${item.id}')" class="text-xs text-zinc-500 hover:text-bf-neon font-bold px-2 py-1">
+                        Eliminar
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cartDrawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function checkoutCart() {
+            if (cart.length === 0) {
+                showToast('Añade algún producto a tu cesta primero');
+                return;
+            }
+            cart = [];
+            updateCartUI();
+            toggleCart();
+            showToast('🎉 ¡Pedido Black Friday reservado con envío 24h!');
+        }
+
+        // ==========================================
+        // 4. MODALES DE LOS 8 BLOQUES DEL BOCETO
+        // ==========================================
+        let selectedStars = 5;
+
+        function openModal(sectionKey) {
+            const modal = document.getElementById('sectionModal');
+            const content = document.getElementById('modalContent');
+
+            const templates = {
+                catalogo: `
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-orange/15 text-bf-orange text-xs font-black uppercase mb-3">Catálogo PcCom</span>
+                    <h3 class="text-2xl font-black text-white">Familias Oficiales Urban & PcCom</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Selecciona una categoría para filtrar el escaparate o añade directamente los superventas:</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 my-5">
+                        <button onclick="closeModal(); filterShowcase('catalogo'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">🖥️</span>
+                            <span class="text-xs font-bold text-white block">Ordenadores PcCom</span>
+                            <span class="text-[11px] text-bf-orange">Ready & Custom</span>
+                        </button>
+                        <button onclick="closeModal(); handleSearch('RTX'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">⚡</span>
+                            <span class="text-xs font-bold text-white block">Tarjetas Gráficas</span>
+                            <span class="text-[11px] text-bf-orange">NVIDIA RTX 40/50</span>
+                        </button>
+                        <button onclick="closeModal(); handleSearch('Ryzen'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">🧠</span>
+                            <span class="text-xs font-bold text-white block">Procesadores</span>
+                            <span class="text-[11px] text-bf-orange">AMD X3D & Intel</span>
+                        </button>
+                        <button onclick="closeModal(); handleSearch('Portátil'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">💻</span>
+                            <span class="text-xs font-bold text-white block">Portátiles</span>
+                            <span class="text-[11px] text-bf-orange">PcCom Revolt & Pro</span>
+                        </button>
+                        <button onclick="closeModal(); handleSearch('OLED'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">🖵</span>
+                            <span class="text-xs font-bold text-white block">Monitores</span>
+                            <span class="text-[11px] text-bf-orange">OLED 240Hz / 4K</span>
+                        </button>
+                        <button onclick="closeModal(); handleSearch('SSD'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">💾</span>
+                            <span class="text-xs font-bold text-white block">Almacenamiento</span>
+                            <span class="text-[11px] text-bf-orange">NVMe Gen4 / Gen5</span>
+                        </button>
+                    </div>
+                `,
+                tendencias: `
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-neon/15 text-bf-neon text-xs font-black uppercase mb-3">Top Ventas PcCom</span>
+                    <h3 class="text-2xl font-black text-white">Tendencias Hardware Black Friday</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Los 3 productos más buscados y comprados hoy en nuestra tienda:</p>
+                    <div class="space-y-3 my-5">
+                        ${productsDB.filter(p => p.isTrend).slice(0, 3).map((p, idx) => `
+                            <div class="p-4 rounded-xl bg-bf-card border border-bf-border flex items-center justify-between gap-3">
+                                <div>
+                                    <span class="text-[11px] font-black text-bf-orange uppercase">#${idx + 1} EN TENDENCIA</span>
+                                    <p class="text-sm font-bold text-white">${p.name}</p>
+                                    <span class="text-base font-black text-bf-neon">${p.price} €</span>
+                                </div>
+                                <button onclick="addToCart('${p.id}')" class="px-3.5 py-2 rounded-xl bg-bf-orange text-white text-xs font-bold shrink-0">+ Cesta</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                `,
+                ofertas: `
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-neon text-white text-xs font-black uppercase mb-3">🔥 Semana Black Friday</span>
+                    <h3 class="text-2xl font-black text-white">Chollos Relámpago & Cupones</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Unidades limitadas con descuento directo + cupones acumulables:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4">
+                        <div class="p-3.5 rounded-xl bg-bf-card border border-bf-orange/40 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-bold text-white">20€ DTO en PcCom</p>
+                                <p class="text-xs font-mono text-bf-orange font-black">URBANBF20</p>
+                            </div>
+                            <button onclick="copyCoupon('URBANBF20')" class="px-3 py-1.5 rounded-lg bg-bf-orange text-white text-xs font-bold">Copiar</button>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-bf-card border border-bf-neon/40 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-bold text-white">15% Extra Periféricos</p>
+                                <p class="text-xs font-mono text-bf-neon font-black">PCCOMURBAN15</p>
+                            </div>
+                            <button onclick="copyCoupon('PCCOMURBAN15')" class="px-3 py-1.5 rounded-lg bg-bf-neon text-white text-xs font-bold">Copiar</button>
+                        </div>
+                    </div>
+                    <div class="space-y-2.5">
+                        ${productsDB.filter(p => p.isOffer).slice(0, 2).map(p => `
+                            <div class="p-3.5 rounded-xl bg-black border border-bf-border flex items-center justify-between gap-3">
+                                <div>
+                                    <span class="text-[10px] font-black bg-bf-neon text-white px-2 py-0.5 rounded">${p.discount}</span>
+                                    <p class="text-xs font-bold text-white mt-1">${p.name}</p>
+                                    <p class="text-sm font-black text-bf-orange">${p.price} € <span class="text-xs text-zinc-500 line-through font-normal">${p.oldPrice} €</span></p>
+                                </div>
+                                <button onclick="addToCart('${p.id}')" class="px-3.5 py-2 rounded-xl bg-bf-neon text-white text-xs font-black shrink-0">Cazar Chollo</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                `,
+                localizacion: `
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-orange/15 text-bf-orange text-xs font-black uppercase mb-3">Tienda Física</span>
+                    <h3 class="text-2xl font-black text-white">Urban Electronics Flagship</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Horario ampliado especial Black Friday y recogida gratuita en 1 hora:</p>
+                    <div class="my-5 p-4 rounded-2xl bg-bf-card border border-bf-border space-y-3 text-sm">
+                        <p><strong class="text-white">📍 Dirección:</strong> Av. de la Innovación 42, Parque Tecnológico, Local B</p>
+                        <p><strong class="text-white">🕒 Horario Especial Black Friday:</strong> Lunes a Domingo de 09:30 a 22:00 h</p>
+                        <p><strong class="text-white">📞 Teléfono Tienda:</strong> 954 00 11 22</p>
+                        <div class="h-36 rounded-xl bg-black border border-bf-border relative overflow-hidden flex items-center justify-center mt-2">
+                            <div class="absolute inset-0 opacity-25" style="background-image: radial-gradient(#ff6000 1.5px, transparent 1.5px); background-size: 18px 18px;"></div>
+                            <div class="relative z-10 text-center">
+                                <span class="px-3.5 py-1.5 rounded-full bg-bf-orange text-white font-black text-xs shadow-lg">📍 URBAN ELECTRONICS STORE</span>
+                                <p class="text-[11px] text-zinc-300 mt-2 font-semibold">Parking gratuito para clientes · Zona Testing Gaming</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                montajes: `
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-orange/15 text-bf-orange text-xs font-black uppercase mb-3">Servicio Técnico PcCom</span>
+                    <h3 class="text-2xl font-black text-white">Montaje y Testeo de PCs a Medida</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Nuestros técnicos ensamblan tu equipo con gestión de cableado oculta y 24h de pruebas de estrés:</p>
+                    <div class="space-y-3 my-5 text-sm">
+                        <div class="p-4 rounded-xl bg-bf-card border border-bf-border flex justify-between items-center">
+                            <div>
+                                <p class="font-bold text-white">Montaje Básico + Testeo</p>
+                                <p class="text-xs text-zinc-400">Ensamblaje, actualización BIOS y comprobación de temperaturas.</p>
+                            </div>
+                            <span class="text-lg font-black text-bf-orange shrink-0 ml-3">49,95 €</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-bf-card border border-bf-orange flex justify-between items-center">
+                            <div>
+                                <span class="text-[10px] font-black bg-bf-orange text-white px-2 py-0.5 rounded uppercase">Recomendado</span>
+                                <p class="font-bold text-white mt-1">Montaje Gaming Pro + SO + Drivers</p>
+                                <p class="text-xs text-zinc-400">Instalación Windows 11, perfiles XMP/EXPO y curvas silenciosas.</p>
+                            </div>
+                            <span class="text-lg font-black text-bf-neon shrink-0 ml-3">69,95 €</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-bf-card border border-bf-border flex justify-between items-center">
+                            <div>
+                                <p class="font-bold text-white">Refrigeración Líquida Custom</p>
+                                <p class="text-xs text-zinc-400">Tubo rígido a medida, test de estanqueidad y overclocking.</p>
+                            </div>
+                            <span class="text-lg font-black text-bf-orange shrink-0 ml-3">149 €</span>
+                        </div>
+                    </div>
+                    <button onclick="closeModal(); goToContact('montajes')" class="w-full py-3.5 rounded-xl bg-bf-orange hover:bg-bf-orangeHover text-white font-black text-sm uppercase">
+                        Solicitar Presupuesto de Montaje
+                    </button>
+                `,
+                garantias: `
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-neon/15 text-bf-neon text-xs font-black uppercase mb-3">Garantía Oficial</span>
+                    <h3 class="text-2xl font-black text-white">Protección Total Urban Care</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Compra en Black Friday con la máxima seguridad postventa:</p>
+                    <div class="space-y-3 my-5 text-sm">
+                        <div class="p-3.5 rounded-xl bg-bf-card border border-bf-border">
+                            <p class="font-bold text-white">🛡️ 3 Años de Garantía Legal</p>
+                            <p class="text-xs text-zinc-400 mt-1">Cobertura directa gestionada por nuestro SAT propio sin intermediarios.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-bf-card border border-bf-border">
+                            <p class="font-bold text-white">⚡ Garantía de Sustitución en 24h</p>
+                            <p class="text-xs text-zinc-400 mt-1">Si un componente llega defectuoso, te enviamos uno nuevo al instante.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-bf-card border border-bf-border">
+                            <p class="font-bold text-white">💻 Equipo de Sustitución en Taller</p>
+                            <p class="text-xs text-zinc-400 mt-1">Para profesionales y estudiantes que no pueden quedarse sin ordenador.</p>
+                        </div>
+                    </div>
+                    <button onclick="closeModal(); goToContact('garantias')" class="w-full py-3 rounded-xl bg-bf-card hover:bg-zinc-800 border border-bf-border text-white font-bold text-sm">
+                        Abrir incidencia de garantía
+                    </button>
+                `,
+                devoluciones: `
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-orange/15 text-bf-orange text-xs font-black uppercase mb-3">Especial Black Friday & Reyes</span>
+                    <h3 class="text-2xl font-black text-white">Devoluciones Ampliadas hasta el 15 de Enero</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Adelanta tus compras de Navidad sin preocuparte por los plazos:</p>
+                    <div class="my-5 p-4 rounded-2xl bg-bf-card border border-bf-border space-y-3 text-sm text-zinc-300">
+                        <p><strong class="text-bf-orange">Paso 1:</strong> Solicita la devolución desde tu cuenta o mediante nuestro formulario indicando el nº de pedido.</p>
+                        <p><strong class="text-bf-orange">Paso 2:</strong> Elige recogida gratuita en tu domicilio o entrega directa en nuestra tienda física.</p>
+                        <p><strong class="text-bf-orange">Paso 3:</strong> Recibe el reembolso íntegro en menos de 48 horas tras la recepción.</p>
+                    </div>
+                    <button onclick="closeModal(); goToContact('devoluciones')" class="w-full py-3.5 rounded-xl bg-bf-orange text-white font-black text-sm uppercase">
+                        Iniciar Devolución
+                    </button>
+                `,
+                valoranos: `
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-neon/15 text-bf-neon text-xs font-black uppercase mb-3">Opiniones Verificadas</span>
+                    <h3 class="text-2xl font-black text-white">Valora Urban Electronics</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Tu valoración se publica al instante en nuestra comunidad:</p>
+                    
+                    <div class="my-4 p-4 rounded-2xl bg-bf-card border border-bf-border">
+                        <div class="flex items-center justify-center gap-2 mb-3">
+                            ${[1, 2, 3, 4, 5].map(n => `
+                                <button type="button" onclick="setStars(${n})" data-star="${n}" class="modal-star text-3xl text-bf-orange transition-transform hover:scale-110">★</button>
+                            `).join('')}
+                        </div>
+                        <input type="text" id="reviewAuthor" placeholder="Tu nombre o nick (ej. Alex_PC)" class="w-full px-3.5 py-2 rounded-xl bg-black border border-bf-border text-xs text-white mb-2 focus:outline-none focus:border-bf-orange">
+                        <textarea id="reviewComment" rows="2" placeholder="Cuéntanos qué tal tu compra o montaje Black Friday..." class="w-full px-3.5 py-2 rounded-xl bg-black border border-bf-border text-xs text-white mb-3 focus:outline-none focus:border-bf-orange"></textarea>
+                        <button onclick="addLiveReview()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-bf-orange to-bf-neon text-white font-black text-xs uppercase">
+                            Publicar Opinión Ahora
+                        </button>
+                    </div>
+
+                    <div id="liveReviewsContainer" class="space-y-2.5 max-h-48 overflow-y-auto pr-1">
+                        ${reviewsList.map(r => `
+                            <div class="p-3 rounded-xl bg-black border border-bf-border text-xs">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-white">${r.author} <span class="text-bf-orange ml-1">${'★'.repeat(r.rating)}</span></span>
+                                    <span class="text-zinc-500 text-[10px]">${r.date}</span>
+                                </div>
+                                <p class="text-zinc-300">${r.comment}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `
+            };
+
+            content.innerHTML = templates[sectionKey] || '';
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('sectionModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        const sectionModalEl = document.getElementById('sectionModal');
+        if (sectionModalEl) {
+            sectionModalEl.addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+        }
+
+        function setStars(num) {
+            selectedStars = num;
+            document.querySelectorAll('.modal-star').forEach(btn => {
+                const val = parseInt(btn.getAttribute('data-star'));
+                btn.classList.toggle('text-bf-orange', val <= num);
+                btn.classList.toggle('text-zinc-700', val > num);
+            });
+        }
+
+        function addLiveReview() {
+            const authorInput = document.getElementById('reviewAuthor');
+            const commentInput = document.getElementById('reviewComment');
+            const author = authorInput.value.trim() || 'Cliente Verificado';
+            const comment = commentInput.value.trim();
+
+            if (!comment) {
+                showToast('Escribe un breve comentario antes de publicar');
+                return;
+            }
+
+            reviewsList.unshift({
+                author,
+                rating: selectedStars,
+                comment,
+                date: 'Ahora mismo'
+            });
+
+            openModal('valoranos');
+            showToast('¡Gracias! Tu reseña se ha publicado en vivo');
+        }
+
+        // ==========================================
+        // 5. UTILIDADES (CUPONES, CONTADOR, TOAST)
+        // ==========================================
+        function copyCoupon(code) {
+            const temp = document.createElement('input');
+            temp.value = code;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast(`🎟️ Cupón ${code} copiado al portapapeles`);
+        }
+
+        function goToContact(subject) {
+            const select = document.getElementById('asunto');
+            if (select) select.value = subject;
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            e.target.reset();
+            showToast(`¡Gracias ${nombre}! Un técnico te responderá en breve.`);
+        }
+
+        let toastTimer;
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3500);
+        }
+
+        // Cuenta atrás en vivo de Black Friday
+        function startBlackFridayCountdown() {
+            let totalSeconds = 14 * 3600 + 38 * 60 + 52;
+            const timerEl = document.getElementById('countdownTimer');
+
+            setInterval(() => {
+        }
+
+        // Inicialización al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartUI();
+            startBlackFridayCountdown();
+        });
+    </script>
+</body>
+</html>
