@@ -1,10 +1,4 @@
-if (totalSeconds <= 0) totalSeconds = 24 * 3600;
-                totalSeconds--;
-                const h = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
-                const m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
-                const s = String(totalSeconds % 60).padStart(2, '0');
-                if (timerEl) timerEl.textContent = `${h}h : ${m}m : ${s}s`;
-            }, 1000);<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
