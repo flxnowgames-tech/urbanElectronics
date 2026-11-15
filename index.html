@@ -103,7 +103,7 @@
 
                 <!-- Barra de Búsqueda Funcional (Desktop) -->
                 <div class="hidden md:flex flex-1 max-w-xl relative">
-                    <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="Buscar PcCom Ready, RTX 4070 Super, Ryzen 7 7800X3D, OLED..."
+                    <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="Buscar PcCom Ready, RTX 4070 Super, Ryzen 7 7800X3D, Fuentes ATX 3.0..."
                         class="w-full pl-4 pr-12 py-2.5 rounded-xl bg-bf-black border border-bf-border text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-bf-orange focus:ring-1 focus:ring-bf-orange transition-all">
                     <button onclick="document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" aria-label="Buscar"
                         class="absolute right-1.5 top-1.5 bottom-1.5 px-3 rounded-lg bg-bf-orange hover:bg-bf-orangeHover text-white flex items-center justify-center transition-colors">
@@ -111,9 +111,15 @@
                     </button>
                 </div>
 
-                <!-- Acciones Derecha: Contáctanos + Carrito -->
+                <!-- Acciones Derecha: Volver al Lobby + Contáctanos + Carrito -->
                 <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-                    <a href="#contacto" class="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-bf-card hover:bg-zinc-800 border border-bf-border text-xs font-bold text-zinc-200 transition-colors">
+                    <a href="https://flxnowgames-tech.github.io/lobby/" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-2 rounded-xl bg-bf-card hover:bg-zinc-800 border border-bf-neon/50 hover:border-bf-neon text-xs font-bold text-white transition-all shadow-md shadow-bf-neon/10">
+                        <svg class="w-4 h-4 text-bf-neon shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                        <span class="hidden xs:inline sm:inline">Volver al Lobby</span>
+                        <span class="inline xs:hidden sm:hidden">Lobby</span>
+                    </a>
+
+                    <a href="#contacto" class="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-bf-card hover:bg-zinc-800 border border-bf-border text-xs font-bold text-zinc-200 transition-colors">
                         <svg class="w-4 h-4 text-bf-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                         Contáctanos
                     </a>
@@ -158,7 +164,7 @@
             </p>
 
             <p class="max-w-2xl mx-auto text-zinc-400 text-sm sm:text-base mt-4 leading-relaxed">
-                Equipos <strong class="text-white">PcCom Ready</strong> montados por expertos, tarjetas gráficas de última generación, monitores OLED y chollos relámpago con stock limitado.
+                Equipos <strong class="text-white">PcCom Ready</strong> ensamblados por expertos, procesadores de última generación, fuentes de poder 80+ Gold, refrigeración líquida y 100 chollos relámpago con stock limitado.
             </p>
 
             <!-- Botones de Acción Principales -->
@@ -166,8 +172,8 @@
                 <a href="#escaparate" onclick="filterShowcase('ofertas')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-bf-neon to-bf-orange hover:brightness-110 text-white font-black text-sm sm:text-base uppercase tracking-wider shadow-xl shadow-bf-neon/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
                     <span>⚡ Ver Chollos Black Friday</span>
                 </a>
-                <a href="#escaparate" onclick="filterShowcase('catalogo')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-bf-card hover:bg-zinc-800 border border-bf-orange/50 text-white font-bold text-sm sm:text-base transition-all flex items-center justify-center gap-2">
-                    <span>Explorar Catálogo PcCom</span>
+                <a href="#escaparate" onclick="filterShowcase('todos')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-bf-card hover:bg-zinc-800 border border-bf-orange/50 text-white font-bold text-sm sm:text-base transition-all flex items-center justify-center gap-2">
+                    <span>Explorar 100 Productos PcCom</span>
                 </a>
             </div>
 
@@ -226,7 +232,7 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
                     </div>
                     <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover:text-bf-orange transition-colors">Catálogo</h3>
-                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Ordenadores PcCom Ready, tarjetas gráficas RTX, procesadores Ryzen, portátiles y monitores.</p>
+                    <p class="text-zinc-400 text-sm mt-2 leading-relaxed">PcCom Ready, tarjetas gráficas RTX, procesadores Ryzen, fuentes de poder y líquidas.</p>
                 </div>
                 <div class="mt-5 pt-3 border-t border-bf-border/60 flex items-center justify-between text-xs font-bold text-bf-orange uppercase">
                     <span>Explorar familias</span>
@@ -349,28 +355,57 @@
         <div class="bg-bf-dark border border-bf-border rounded-3xl p-5 sm:p-8 lg:p-10 shadow-2xl">
             
             <!-- Cabecera del Escaparate + Pestañas de Filtro -->
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-bf-border">
-                <div>
-                    <div class="flex items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded bg-bf-neon text-white text-[11px] font-black uppercase">LIVE BLACK FRIDAY</span>
-                        <span class="text-xs font-bold text-bf-orange uppercase tracking-wider">Selección Oficial PcCom</span>
+            <div class="flex flex-col gap-6 pb-8 border-b border-bf-border">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded bg-bf-neon text-white text-[11px] font-black uppercase">LIVE BLACK FRIDAY</span>
+                            <span class="text-xs font-bold text-bf-orange uppercase tracking-wider">Selección Oficial PcCom Ready · 100 Artículos</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white mt-1.5">Catálogo, Tendencias y Secciones</h2>
                     </div>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white mt-1.5">Catálogo, Tendencias y Chollos</h2>
+                    <div class="text-xs sm:text-sm font-bold text-zinc-400 bg-bf-card px-4 py-2 rounded-xl border border-bf-border self-start lg:self-auto">
+                        Mostrando <span id="visibleCount" class="text-bf-orange font-black">100</span> de 100 productos
+                    </div>
                 </div>
 
-                <!-- Filtros Principales -->
+                <!-- Filtros Principales y Nuevas Secciones Hardware -->
                 <div class="flex flex-wrap gap-2" id="showcaseTabs">
-                    <button onclick="filterShowcase('todos')" data-filter="todos" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-orange text-white shadow-lg shadow-bf-orange/25 transition-all">
-                        Todos (9)
+                    <button onclick="filterShowcase('todos')" data-filter="todos" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-orange text-white shadow-lg shadow-bf-orange/25 transition-all">
+                        Todos (100)
                     </button>
-                    <button onclick="filterShowcase('ofertas')" data-filter="ofertas" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
-                        🔥 Ofertas Black Friday
+                    <button onclick="filterShowcase('ofertas')" data-filter="ofertas" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🔥 Ofertas Black
                     </button>
-                    <button onclick="filterShowcase('tendencias')" data-filter="tendencias" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
-                        📈 Tendencias Top Ventas
+                    <button onclick="filterShowcase('tendencias')" data-filter="tendencias" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        📈 Tendencias
                     </button>
-                    <button onclick="filterShowcase('catalogo')" data-filter="catalogo" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
-                        🖥️ Catálogo PcCom
+                    <button onclick="filterShowcase('PcCom Ready')" data-filter="PcCom Ready" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🖥️ PcCom Ready
+                    </button>
+                    <button onclick="filterShowcase('Procesadores')" data-filter="Procesadores" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🧠 Procesadores
+                    </button>
+                    <button onclick="filterShowcase('Tarjetas Gráficas')" data-filter="Tarjetas Gráficas" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        ⚡ Gráficas
+                    </button>
+                    <button onclick="filterShowcase('Fuentes de Poder')" data-filter="Fuentes de Poder" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🔌 Fuentes de Poder
+                    </button>
+                    <button onclick="filterShowcase('Refrigeración Líquida')" data-filter="Refrigeración Líquida" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        ❄️ Líquidas AIO
+                    </button>
+                    <button onclick="filterShowcase('Placas Base')" data-filter="Placas Base" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🎛️ Placas Base
+                    </button>
+                    <button onclick="filterShowcase('Memorias RAM')" data-filter="Memorias RAM" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        💾 RAM & SSD
+                    </button>
+                    <button onclick="filterShowcase('Monitores Gaming')" data-filter="Monitores Gaming" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🖵 Monitores
+                    </button>
+                    <button onclick="filterShowcase('Periféricos Gaming')" data-filter="Periféricos Gaming" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all">
+                        🖱️ Periféricos
                     </button>
                 </div>
             </div>
@@ -471,7 +506,7 @@
         </div>
     </section>
 
-    <!-- PIE DE PÁGINA CON "By fruits.co" -->
+    <!-- PIE DE PÁGINA CON "By manzana" -->
     <footer class="border-t border-bf-border bg-bf-dark py-10 px-4 sm:px-6 lg:px-8 mt-10">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2.5">
@@ -481,7 +516,7 @@
             </div>
 
             <div class="px-4 py-1.5 rounded-full bg-bf-black border border-bf-border text-sm font-bold text-zinc-300">
-                By <span class="text-transparent bg-clip-text bg-gradient-to-r from-bf-orange to-bf-neon font-black">fruits.co</span>
+                By <span class="text-transparent bg-clip-text bg-gradient-to-r from-bf-orange to-bf-neon font-black">manzana</span>
             </div>
 
             <div class="text-xs text-zinc-500">
@@ -552,145 +587,157 @@
     <!-- JAVASCRIPT COMPLETO -->
     <script>
         // ==========================================
-        // 1. BASE DE DATOS DE PRODUCTOS ESTILO PCCOM
+        // 1. BASE DE DATOS DE 100 PRODUCTOS PCCOM
         // ==========================================
-        const productsDB = [
-            {
-                id: 'pccom-ready-4070s',
-                name: 'PcCom Ready Intel Core i7-14700KF / 32GB / 2TB SSD / RTX 4070 Super',
-                category: 'catalogo',
-                subCategory: 'Ordenadores PcCom',
-                badge: 'OFERTA FLASH -24%',
-                badgeStyle: 'bg-bf-neon text-white',
-                oldPrice: 2199,
-                price: 1669,
-                discount: '-24%',
-                stockLeft: 4,
-                specs: 'Windows 11 Home · Refrigeración Líquida 240mm · WiFi 6E',
-                isOffer: true,
-                isTrend: true
-            },
-            {
-                id: 'ryzen-7-7800x3d',
-                name: 'AMD Ryzen 7 7800X3D 4.2 GHz / 5 GHz Socket AM5 Box',
-                category: 'tendencias',
-                subCategory: 'Componentes',
-                badge: 'TOP VENTAS #1',
-                badgeStyle: 'bg-bf-orange text-white',
-                oldPrice: 489,
-                price: 369,
-                discount: '-25%',
-                stockLeft: 7,
-                specs: '8 Núcleos · 16 Hilos · Tecnología 3D V-Cache 96MB',
-                isOffer: true,
-                isTrend: true
-            },
-            {
-                id: 'msi-rtx-4080-super',
-                name: 'MSI GeForce RTX 4080 SUPER VENTUS 3X OC 16GB GDDR6X DLSS3',
-                category: 'ofertas',
-                subCategory: 'Tarjetas Gráficas',
-                badge: 'CHOLLO BLACK -22%',
-                badgeStyle: 'bg-bf-neon text-white',
-                oldPrice: 1279,
-                price: 999,
-                discount: '-22%',
-                stockLeft: 3,
-                specs: 'Arquitectura Ada Lovelace · Triple Ventilador TORX 4.0',
-                isOffer: true,
-                isTrend: false
-            },
-            {
-                id: 'asus-rog-oled-240hz',
-                name: 'ASUS ROG Swift OLED PG27AQDM 27" QHD 240Hz 0.03ms G-Sync',
-                category: 'tendencias',
-                subCategory: 'Monitores Gaming',
-                badge: 'TENDENCIA OLED',
-                badgeStyle: 'bg-bf-orange text-white',
-                oldPrice: 1099,
-                price: 749,
-                discount: '-32%',
-                stockLeft: 5,
-                specs: 'Panel WOLED · Disipador térmico personalizado · HDR10',
-                isOffer: true,
-                isTrend: true
-            },
-            {
-                id: 'pccom-revolt-4060',
-                name: 'PcCom Revolt 4060 Intel Core i7-13700H / 32GB / 1TB SSD / RTX 4060 15.6"',
-                category: 'catalogo',
-                subCategory: 'Portátiles Gaming',
-                badge: 'BLACK FRIDAY -30%',
-                badgeStyle: 'bg-bf-neon text-white',
-                oldPrice: 1429,
-                price: 999,
-                discount: '-30%',
-                stockLeft: 6,
-                specs: 'Pantalla 165Hz sRGB 100% · Chasis metálico ultraligero',
-                isOffer: true,
-                isTrend: false
-            },
-            {
-                id: 'msi-b650-tomahawk',
-                name: 'MSI MAG B650 TOMAHAWK WIFI Placa Base Socket AM5 DDR5',
-                category: 'catalogo',
-                subCategory: 'Componentes',
-                badge: 'CATÁLOGO PCCOM',
-                badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40',
-                oldPrice: 249,
-                price: 189,
-                discount: '-24%',
-                stockLeft: 12,
-                specs: 'VRM 14+2+1 fases · PCIe 4.0 · Triple M.2 · Wi-Fi 6E',
-                isOffer: false,
-                isTrend: true
-            },
-            {
-                id: 'wd-black-sn850x-2tb',
-                name: 'WD_BLACK SN850X 2TB Disco SSD 7300MB/s NVMe PCIe 4.0 M.2',
-                category: 'ofertas',
-                subCategory: 'Almacenamiento',
-                badge: 'PRECIO MÍNIMO -48%',
-                badgeStyle: 'bg-bf-neon text-white',
-                oldPrice: 249,
-                price: 129,
-                discount: '-48%',
-                stockLeft: 5,
-                specs: 'Compatible con PC y PS5 · Game Mode 2.0 predictivo',
-                isOffer: true,
-                isTrend: true
-            },
-            {
-                id: 'lenovo-legion-go',
-                name: 'Lenovo Legion Go Consola Portátil AMD Ryzen Z1 Extreme / 16GB / 512GB',
-                category: 'tendencias',
-                subCategory: 'Consolas Portátiles',
-                badge: 'VIRAL GAMING',
-                badgeStyle: 'bg-bf-orange text-white',
-                oldPrice: 799,
-                price: 599,
-                discount: '-25%',
-                stockLeft: 4,
-                specs: 'Pantalla táctil 8.8" QHD+ 144Hz · Mandos extraíbles FPS',
-                isOffer: true,
-                isTrend: true
-            },
-            {
-                id: 'newskill-kitsune-v2',
-                name: 'Newskill Kitsune V2 Silla Gaming Ergonómica Reclinable Negra/Naranja',
-                category: 'ofertas',
-                subCategory: 'Periféricos & Sillas',
-                badge: 'CHOLLO -52%',
-                badgeStyle: 'bg-bf-neon text-white',
-                oldPrice: 249,
-                price: 119,
-                discount: '-52%',
-                stockLeft: 3,
-                specs: 'Pistón Clase 4 · Cojines lumbar y cervical viscoelásticos',
-                isOffer: true,
-                isTrend: false
-            }
+        const baseProducts = [
+            // --- PcCom Ready (12 productos) ---
+            { id: 'pcc-1', name: 'PcCom Ready Intel Core i7-14700KF / 32GB DDR5 / 2TB SSD / RTX 4070 Super', subCategory: 'PcCom Ready', badge: 'OFERTA FLASH -24%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 2199, price: 1669, discount: '-24%', stockLeft: 4, specs: 'Windows 11 Home · Refrigeración Líquida 240mm · WiFi 6E', isOffer: true, isTrend: true },
+            { id: 'pcc-2', name: 'PcCom Ready AMD Ryzen 7 7700X / 32GB / 1TB NVMe / RTX 4060 Ti 16GB', subCategory: 'PcCom Ready', badge: 'SUPER VENTAS -27%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 1649, price: 1199, discount: '-27%', stockLeft: 6, specs: 'Caja Cristal Templado ARGB · Fuente 750W 80+ Gold', isOffer: true, isTrend: true },
+            { id: 'pcc-3', name: 'PcCom Ready Imperial Ryzen 9 7950X3D / 64GB DDR5 / 4TB SSD / RTX 4090 24GB', subCategory: 'PcCom Ready', badge: 'GAMA EXTREMA -18%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 4199, price: 3449, discount: '-18%', stockLeft: 2, specs: 'Líquida 360mm LCD · Fuente ATX 3.0 1200W Platinum', isOffer: true, isTrend: false },
+            { id: 'pcc-4', name: 'PcCom Ready Lite AMD Ryzen 5 5600 / 16GB / 1TB SSD / RTX 4060 8GB', subCategory: 'PcCom Ready', badge: 'CHOLLO GAMING -28%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 1099, price: 789, discount: '-28%', stockLeft: 9, specs: 'Ideal 1080p Ultra · DLSS 3 · Montado y testeado', isOffer: true, isTrend: true },
+            { id: 'pcc-5', name: 'PcCom Ready Pro Intel Core i5-14600KF / 32GB DDR5 / 1TB SSD / RTX 4070', subCategory: 'PcCom Ready', badge: 'TOP VENTAS -22%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 1799, price: 1399, discount: '-22%', stockLeft: 5, specs: 'Placa Z790 WiFi · Caja flujo alto ARGB', isOffer: true, isTrend: true },
+            { id: 'pcc-6', name: 'PcCom Ready Ultimate Ryzen 7 7800X3D / 32GB DDR5 / 2TB SSD / RTX 4080 Super', subCategory: 'PcCom Ready', badge: 'BLACK EDITION -20%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 2899, price: 2319, discount: '-20%', stockLeft: 3, specs: 'El rey del gaming 4K · Líquida 360mm · Fuente 850W Gold', isOffer: true, isTrend: true },
+            { id: 'pcc-7', name: 'PcCom Ready White Edition Ryzen 7 7700 / 32GB / 2TB / RTX 4070 Super Blanca', subCategory: 'PcCom Ready', badge: 'EDICIÓN BLANCA', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 2149, price: 1729, discount: '-20%', stockLeft: 4, specs: 'Estética Full White · Cables mallados blancos · RGB', isOffer: false, isTrend: true },
+            { id: 'pcc-8', name: 'PcCom Ready Starter Intel Core i5-12400F / 16GB / 1TB NVMe / RX 7600 8GB', subCategory: 'PcCom Ready', badge: 'PRECIO MÍNIMO -30%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 999, price: 699, discount: '-30%', stockLeft: 10, specs: 'Equipo listo para jugar · Envío inmediato 24h', isOffer: true, isTrend: false },
+            { id: 'pcc-9', name: 'PcCom Ready Creator Intel Core i9-14900K / 64GB DDR5 / 4TB / RTX 4080 Super', subCategory: 'PcCom Ready', badge: 'WORKSTATION -19%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 3499, price: 2829, discount: '-19%', stockLeft: 2, specs: 'Renderizado 3D, IA y edición 8K · Windows 11 Pro', isOffer: true, isTrend: false },
+            { id: 'pcc-10', name: 'PcCom Ready AMD Ryzen 7 5700X3D / 32GB / 1TB SSD / RX 7800 XT 16GB', subCategory: 'PcCom Ready', badge: 'CALIDAD/PRECIO -25%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 1599, price: 1199, discount: '-25%', stockLeft: 7, specs: '16GB VRAM para 1440p Nativo · Fuente 750W', isOffer: true, isTrend: true },
+            { id: 'pcc-11', name: 'PcCom Ready Compact Mini-ITX Ryzen 7 7800X3D / 32GB / 2TB / RTX 4070 Ti Super', subCategory: 'PcCom Ready', badge: 'FORMATO COMPACTO', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 2499, price: 2049, discount: '-18%', stockLeft: 3, specs: 'Chasis pequeño de alto rendimiento · Fuente SFX 850W', isOffer: false, isTrend: false },
+            { id: 'pcc-12', name: 'PcCom Ready Office & Home Intel Core i5-13400 / 16GB / 512GB NVMe', subCategory: 'PcCom Ready', badge: 'OFICINA -26%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 649, price: 479, discount: '-26%', stockLeft: 12, specs: 'Ultrasilencioso · WiFi integrado · Listo para trabajar', isOffer: true, isTrend: false },
+
+            // --- Procesadores (12 productos) ---
+            { id: 'cpu-1', name: 'AMD Ryzen 7 7800X3D 4.2 GHz / 5 GHz Socket AM5 Box', subCategory: 'Procesadores', badge: 'TOP VENTAS #1', badgeStyle: 'bg-bf-orange text-white', oldPrice: 489, price: 369, discount: '-25%', stockLeft: 7, specs: '8 Núcleos · 16 Hilos · Tecnología 3D V-Cache 96MB', isOffer: true, isTrend: true },
+            { id: 'cpu-2', name: 'Intel Core i5-14600KF 3.5 GHz / 5.3 GHz Socket 1700 Box', subCategory: 'Procesadores', badge: 'PRECIO BLACK -28%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 349, price: 249, discount: '-28%', stockLeft: 9, specs: '14 Núcleos (6P + 8E) · 20 Hilos · Desbloqueado OC', isOffer: true, isTrend: false },
+            { id: 'cpu-3', name: 'AMD Ryzen 7 9800X3D 4.7 GHz / 5.2 GHz Socket AM5', subCategory: 'Procesadores', badge: 'NOVEDAD TOP', badgeStyle: 'bg-bf-orange text-white', oldPrice: 569, price: 519, discount: '-9%', stockLeft: 3, specs: 'Arquitectura Zen 5 · Segunda Gen 3D V-Cache', isOffer: false, isTrend: true },
+            { id: 'cpu-4', name: 'Intel Core i7-14700KF 3.4 GHz / 5.6 GHz Socket 1700', subCategory: 'Procesadores', badge: 'OFERTA -24%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 459, price: 349, discount: '-24%', stockLeft: 6, specs: '20 Núcleos · 28 Hilos · 33MB Intel Smart Cache', isOffer: true, isTrend: true },
+            { id: 'cpu-5', name: 'AMD Ryzen 5 7600X 4.7 GHz / 5.3 GHz Socket AM5', subCategory: 'Procesadores', badge: 'SUPER CHOLLO -32%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 279, price: 189, discount: '-32%', stockLeft: 14, specs: '6 Núcleos · 12 Hilos · Soporte DDR5 y PCIe 5.0', isOffer: true, isTrend: true },
+            { id: 'cpu-6', name: 'AMD Ryzen 9 7950X3D 4.2 GHz / 5.7 GHz Socket AM5', subCategory: 'Procesadores', badge: 'EXTREMO -21%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 699, price: 549, discount: '-21%', stockLeft: 4, specs: '16 Núcleos · 32 Hilos · 144MB Caché Total', isOffer: true, isTrend: false },
+            { id: 'cpu-7', name: 'Intel Core i9-14900KF 3.2 GHz / 6.0 GHz Socket 1700', subCategory: 'Procesadores', badge: '6.0 GHZ -23%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 649, price: 499, discount: '-23%', stockLeft: 5, specs: '24 Núcleos (8P + 16E) · 32 Hilos · Máxima frecuencia', isOffer: true, isTrend: false },
+            { id: 'cpu-8', name: 'AMD Ryzen 7 5700X3D 3.0 GHz / 4.1 GHz Socket AM4', subCategory: 'Procesadores', badge: 'UPGRADE AM4 -26%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 269, price: 199, discount: '-26%', stockLeft: 11, specs: '8 Núcleos · 16 Hilos · Revive tu placa AM4 con 3D V-Cache', isOffer: true, isTrend: true },
+            { id: 'cpu-9', name: 'AMD Ryzen 5 5600 3.5 GHz / 4.4 GHz Socket AM4 Box', subCategory: 'Procesadores', badge: 'ECONÓMICO -35%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 169, price: 109, discount: '-35%', stockLeft: 15, specs: 'Incluye disipador Wraith Stealth · 65W TDP', isOffer: true, isTrend: false },
+            { id: 'cpu-10', name: 'Intel Core i5-12400F 2.5 GHz / 4.4 GHz Socket 1700', subCategory: 'Procesadores', badge: 'PRECIO BLACK -33%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 165, price: 109, discount: '-33%', stockLeft: 13, specs: '6 Núcleos · 12 Hilos · Incluye disipador Intel', isOffer: true, isTrend: false },
+            { id: 'cpu-11', name: 'AMD Ryzen 7 7700X 4.5 GHz / 5.4 GHz Socket AM5', subCategory: 'Procesadores', badge: 'OFERTA -25%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 369, price: 275, discount: '-25%', stockLeft: 8, specs: '8 Núcleos · 16 Hilos · Gráficos Radeon integrados', isOffer: true, isTrend: false },
+            { id: 'cpu-12', name: 'Intel Core Ultra 7 265K 3.9 GHz / 5.5 GHz Socket 1851', subCategory: 'Procesadores', badge: 'NUEVA GEN', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 449, price: 399, discount: '-11%', stockLeft: 6, specs: '20 Núcleos · NPU IA integrada · Eficiencia mejorada', isOffer: false, isTrend: false },
+
+            // --- Tarjetas Gráficas (12 productos) ---
+            { id: 'gpu-1', name: 'MSI GeForce RTX 4080 SUPER VENTUS 3X OC 16GB GDDR6X DLSS3', subCategory: 'Tarjetas Gráficas', badge: 'CHOLLO BLACK -22%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 1279, price: 999, discount: '-22%', stockLeft: 3, specs: 'Ada Lovelace · Triple Ventilador TORX 4.0', isOffer: true, isTrend: true },
+            { id: 'gpu-2', name: 'Sapphire PULSE AMD Radeon RX 7800 XT 16GB GDDR6', subCategory: 'Tarjetas Gráficas', badge: 'CALIDAD/PRECIO -21%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 579, price: 459, discount: '-21%', stockLeft: 5, specs: 'RDNA 3 · Ideal para Gaming 1440p Ultra', isOffer: true, isTrend: true },
+            { id: 'gpu-3', name: 'ASUS Dual GeForce RTX 4070 SUPER EVO OC 12GB GDDR6X', subCategory: 'Tarjetas Gráficas', badge: 'SUPER VENTAS -19%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 719, price: 579, discount: '-19%', stockLeft: 6, specs: 'Doble ventilador Axial-tech · DLSS 3.5 Frame Gen', isOffer: true, isTrend: true },
+            { id: 'gpu-4', name: 'Gigabyte GeForce RTX 4060 WINDFORCE OC 8GB GDDR6', subCategory: 'Tarjetas Gráficas', badge: 'OFERTA FLASH -23%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 369, price: 285, discount: '-23%', stockLeft: 10, specs: 'Consumo reducido 115W · Refrigeración WINDFORCE', isOffer: true, isTrend: true },
+            { id: 'gpu-5', name: 'ASUS ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X', subCategory: 'Tarjetas Gráficas', badge: 'BUQUE INSIGNIA', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 2299, price: 1949, discount: '-15%', stockLeft: 2, specs: 'Cámara de vapor · 24GB VRAM · Gaming 4K/8K', isOffer: false, isTrend: false },
+            { id: 'gpu-6', name: 'PowerColor Fighter AMD Radeon RX 7900 GRE 16GB GDDR6', subCategory: 'Tarjetas Gráficas', badge: 'CHOLLO 1440P -20%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 649, price: 519, discount: '-20%', stockLeft: 4, specs: 'Bus 256-bit · Gran rendimiento rasterizado', isOffer: true, isTrend: false },
+            { id: 'gpu-7', name: 'MSI GeForce RTX 4070 Ti SUPER GAMING X SLIM 16GB GDDR6X', subCategory: 'Tarjetas Gráficas', badge: 'BLACK FRIDAY -18%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 999, price: 819, discount: '-18%', stockLeft: 4, specs: '16GB GDDR6X · Diseño delgado TRI FROZR 3', isOffer: true, isTrend: true },
+            { id: 'gpu-8', name: 'XFX Speedster SWFT 210 AMD Radeon RX 7600 8GB GDDR6', subCategory: 'Tarjetas Gráficas', badge: 'PRECIO MÍNIMO -26%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 319, price: 235, discount: '-26%', stockLeft: 11, specs: 'Backplate metálico · FSR 3 · 1080p competitivo', isOffer: true, isTrend: false },
+            { id: 'gpu-9', name: 'Zotac Gaming GeForce RTX 4060 Ti Twin Edge 16GB GDDR6', subCategory: 'Tarjetas Gráficas', badge: '16GB VRAM -21%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 519, price: 409, discount: '-21%', stockLeft: 7, specs: 'Ideal para IA local y texturas ultra', isOffer: true, isTrend: false },
+            { id: 'gpu-10', name: 'Sapphire NITRO+ AMD Radeon RX 7900 XTX Vapor-X 24GB GDDR6', subCategory: 'Tarjetas Gráficas', badge: 'TOP AMD -17%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 1149, price: 949, discount: '-17%', stockLeft: 3, specs: 'Barra ARGB · Cámara de vapor · 24GB GDDR6', isOffer: true, isTrend: false },
+            { id: 'gpu-11', name: 'Gigabyte GeForce RTX 4070 AERO OC V2 12GB GDDR6X Blanca', subCategory: 'Tarjetas Gráficas', badge: 'WHITE BUILD', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 679, price: 569, discount: '-16%', stockLeft: 5, specs: 'Acabado blanco y plata · Triple ventilador', isOffer: false, isTrend: false },
+            { id: 'gpu-12', name: 'ASRock Challenger Intel Arc B580 12GB GDDR6 OC', subCategory: 'Tarjetas Gráficas', badge: 'REVELACIÓN -15%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 319, price: 269, discount: '-15%', stockLeft: 8, specs: '12GB VRAM · XeSS Frame Generation · AV1', isOffer: true, isTrend: true },
+
+            // --- Fuentes de Poder (12 productos) ---
+            { id: 'psu-1', name: 'Corsair RM850e 850W 80 Plus Gold Modular ATX 3.0 PCIe 5.0', subCategory: 'Fuentes de Poder', badge: 'TOP VENTAS PSU -26%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 149, price: 109, discount: '-26%', stockLeft: 9, specs: 'Cable 12VHPWR nativo · Condensadores 105°C · Zero RPM', isOffer: true, isTrend: true },
+            { id: 'psu-2', name: 'MSI MAG A750GL PCIE5 750W 80 Plus Gold Modular', subCategory: 'Fuentes de Poder', badge: 'CHOLLO BLACK -29%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 119, price: 84, discount: '-29%', stockLeft: 12, specs: 'Conector amarillo 16 pines · Compacta 140mm', isOffer: true, isTrend: true },
+            { id: 'psu-3', name: 'Tempest PSU 750W 80 Plus Bronze Negro', subCategory: 'Fuentes de Poder', badge: 'ECONÓMICA -34%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 69, price: 45, discount: '-34%', stockLeft: 15, specs: 'Ventilador ultrasilencioso 120mm · Protecciones OVP/SCP', isOffer: true, isTrend: false },
+            { id: 'psu-4', name: 'Seasonic Focus GX-850 ATX 3.0 850W 80 Plus Gold Full Modular', subCategory: 'Fuentes de Poder', badge: 'GARANTÍA 10 AÑOS', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 169, price: 135, discount: '-20%', stockLeft: 6, specs: 'Calidad japonesa · Control híbrido de ventilador', isOffer: false, isTrend: false },
+            { id: 'psu-5', name: 'Corsair RM1000x Shift 1000W 80 Plus Gold Modular ATX 3.0', subCategory: 'Fuentes de Poder', badge: 'CONEXIÓN LATERAL -22%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 219, price: 169, discount: '-22%', stockLeft: 4, specs: 'Conectores modulares laterales · Para RTX 4080/4090', isOffer: true, isTrend: true },
+            { id: 'psu-6', name: 'MSI MPG A850G PCIE5 850W 80 Plus Gold Full Modular', subCategory: 'Fuentes de Poder', badge: 'OFERTA -24%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 159, price: 119, discount: '-24%', stockLeft: 8, specs: '100% condensadores japoneses · Modo 0% RPM', isOffer: true, isTrend: false },
+            { id: 'psu-7', name: 'Gigabyte UD750GM 750W 80 Plus Gold Full Modular', subCategory: 'Fuentes de Poder', badge: 'PRECIO BLACK -27%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 109, price: 79, discount: '-27%', stockLeft: 10, specs: 'Diseño Ultra Durable · Ventilador hidráulico 120mm', isOffer: true, isTrend: false },
+            { id: 'psu-8', name: 'ASUS ROG Thor 1000W Platinum II 80 Plus Platinum Modular', subCategory: 'Fuentes de Poder', badge: 'PANTALLA OLED -19%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 349, price: 279, discount: '-19%', stockLeft: 2, specs: 'Monitorización consumo en tiempo real · Aura Sync', isOffer: true, isTrend: false },
+            { id: 'psu-9', name: 'Be Quiet! Pure Power 12 M 850W 80 Plus Gold Modular ATX 3.0', subCategory: 'Fuentes de Poder', badge: 'ULTRASILENCIOSA', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 149, price: 124, discount: '-17%', stockLeft: 7, specs: 'Ingeniería alemana · Doble raíl 12V de alta estabilidad', isOffer: false, isTrend: false },
+            { id: 'psu-10', name: 'Forgeon Bolt PSU 850W 80+ Gold Full Modular Blanca', subCategory: 'Fuentes de Poder', badge: 'WHITE EDITION -25%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 139, price: 104, discount: '-25%', stockLeft: 5, specs: 'Cables planos blancos incluidos · PCIe 5.0', isOffer: true, isTrend: false },
+            { id: 'psu-11', name: 'Mars Gaming MPIII650 650W 80 Plus Bronze', subCategory: 'Fuentes de Poder', badge: 'CHOLLO -31%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 55, price: 37, discount: '-31%', stockLeft: 14, specs: 'Tecnología SMD · Eficiencia 85% · Cables negros', isOffer: true, isTrend: false },
+            { id: 'psu-12', name: 'Corsair SF850L 850W 80 Plus Gold SFX-L Modular ATX 3.0', subCategory: 'Fuentes de Poder', badge: 'MINI-ITX -18%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 189, price: 154, discount: '-18%', stockLeft: 4, specs: 'Formato compacto SFX-L · Ventilador 120mm silencioso', isOffer: true, isTrend: false },
+
+            // --- Refrigeración Líquida (12 productos) ---
+            { id: 'aio-1', name: 'Corsair iCUE H100x RGB ELITE Kit Refrigeración Líquida 240mm', subCategory: 'Refrigeración Líquida', badge: 'TOP VENTAS AIO -28%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 125, price: 89, discount: '-28%', stockLeft: 9, specs: '2 Ventiladores SP120 RGB · Compatible AM5 y LGA1700', isOffer: true, isTrend: true },
+            { id: 'aio-2', name: 'MSI MAG CORELIQUID M240 Kit Refrigeración Líquida 240mm ARGB', subCategory: 'Refrigeración Líquida', badge: 'CHOLLO BLACK -33%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 109, price: 72, discount: '-33%', stockLeft: 11, specs: 'Base de cobre microcanal · Tubos antievaporación', isOffer: true, isTrend: true },
+            { id: 'aio-3', name: 'NZXT Kraken Elite 360 RGB Kit Refrigeración Líquida con Pantalla LCD', subCategory: 'Refrigeración Líquida', badge: 'PANTALLA LCD -18%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 319, price: 259, discount: '-18%', stockLeft: 3, specs: 'Pantalla LCD gran angular 2.36" · GIFs y temperaturas', isOffer: true, isTrend: true },
+            { id: 'aio-4', name: 'Arctic Liquid Freezer III 360 A-RGB Negra', subCategory: 'Refrigeración Líquida', badge: 'MEJOR RENDIMIENTO', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 119, price: 94, discount: '-21%', stockLeft: 6, specs: 'Radiador grueso 38mm · Ventilador VRM integrado', isOffer: false, isTrend: true },
+            { id: 'aio-5', name: 'Tempest Liquid Cooler 240 RGB Kit Refrigeración Líquida Negro', subCategory: 'Refrigeración Líquida', badge: 'PRECIO MÍNIMO -36%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 75, price: 47, discount: '-36%', stockLeft: 14, specs: 'Bomba cerámica silenciosa · Iluminación ARGB', isOffer: true, isTrend: false },
+            { id: 'aio-6', name: 'ASUS ROG RYUJIN III 360 ARGB Kit Refrigeración Líquida LCD 3.5"', subCategory: 'Refrigeración Líquida', badge: 'GAMA ALTA -16%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 369, price: 309, discount: '-16%', stockLeft: 2, specs: 'Bomba Asetek 8ª Gen · Pantalla LCD 3.5" personalizable', isOffer: true, isTrend: false },
+            { id: 'aio-7', name: 'Forgeon Azoth 360 ARGB Kit Refrigeración Líquida Blanca', subCategory: 'Refrigeración Líquida', badge: 'WHITE BUILD -24%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 145, price: 109, discount: '-24%', stockLeft: 5, specs: 'Acabado blanco puro · Espejo infinito en bomba', isOffer: true, isTrend: false },
+            { id: 'aio-8', name: 'DeepCool LS720 SE Digital Kit Refrigeración Líquida 360mm', subCategory: 'Refrigeración Líquida', badge: 'DISPLAY DIGITAL -22%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 139, price: 108, discount: '-22%', stockLeft: 7, specs: 'Indicador numérico de temp CPU en el bloque', isOffer: true, isTrend: false },
+            { id: 'aio-9', name: 'Corsair iCUE LINK H150i LCD 360mm Negro', subCategory: 'Refrigeración Líquida', badge: 'SIN CABLES -20%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 299, price: 239, discount: '-20%', stockLeft: 4, specs: 'Ecosistema iCUE LINK de un solo cable · Pantalla IPS', isOffer: true, isTrend: false },
+            { id: 'aio-10', name: 'Mars Gaming ML-ONE240 Kit Refrigeración Líquida ARGB Negro', subCategory: 'Refrigeración Líquida', badge: 'CHOLLO -35%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 69, price: 44, discount: '-35%', stockLeft: 13, specs: 'Espejo infinito FRGB · Hasta 400W TDP soportados', isOffer: true, isTrend: false },
+            { id: 'aio-11', name: 'Lian Li Galahad II Trinity Performance 360 Negra', subCategory: 'Refrigeración Líquida', badge: 'EXTREME COOLING', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 179, price: 149, discount: '-17%', stockLeft: 4, specs: '3 tapas de bomba intercambiables · Alto flujo', isOffer: false, isTrend: false },
+            { id: 'aio-12', name: 'MSI MAG CORELIQUID E360 White 360mm ARGB', subCategory: 'Refrigeración Líquida', badge: 'OFERTA -25%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 149, price: 111, discount: '-25%', stockLeft: 6, specs: 'Cabezal giratorio 270° · Radiador 12 canales', isOffer: true, isTrend: false },
+
+            // --- Placas Base (10 productos) ---
+            { id: 'mb-1', name: 'MSI MAG B650 TOMAHAWK WIFI Placa Base Socket AM5 DDR5', subCategory: 'Placas Base', badge: 'TOP AM5 -24%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 249, price: 189, discount: '-24%', stockLeft: 12, specs: 'VRM 14+2+1 fases · Triple M.2 · Wi-Fi 6E', isOffer: true, isTrend: true },
+            { id: 'mb-2', name: 'ASUS TUF GAMING B760-PLUS WIFI DDR5 Socket 1700', subCategory: 'Placas Base', badge: 'OFERTA INTEL -22%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 219, price: 169, discount: '-22%', stockLeft: 8, specs: 'PCIe 5.0 · 3x PCIe 4.0 M.2 · Componentes militares', isOffer: true, isTrend: false },
+            { id: 'mb-3', name: 'Gigabyte B650 EAGLE AX Socket AM5 DDR5 WiFi 6E', subCategory: 'Placas Base', badge: 'CALIDAD/PRECIO -25%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 189, price: 141, discount: '-25%', stockLeft: 10, specs: 'Q-Flash Plus · Disipadores térmicos M.2', isOffer: true, isTrend: true },
+            { id: 'mb-4', name: 'MSI PRO Z790-P WIFI Socket 1700 DDR5', subCategory: 'Placas Base', badge: 'Z790 OC -21%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 239, price: 188, discount: '-21%', stockLeft: 6, specs: '14+1+1 DRPS · Lightning Gen 5 · USB 3.2 Gen 2x2', isOffer: true, isTrend: false },
+            { id: 'mb-5', name: 'ASUS ROG STRIX X870-A GAMING WIFI Blanca Socket AM5', subCategory: 'Placas Base', badge: 'NUEVA X870', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 389, price: 339, discount: '-13%', stockLeft: 4, specs: 'USB4 40Gbps · WiFi 7 · Acabado blanco plateado', isOffer: false, isTrend: false },
+            { id: 'mb-6', name: 'Gigabyte B550M AORUS ELITE Socket AM4 DDR4', subCategory: 'Placas Base', badge: 'CHOLLO AM4 -28%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 129, price: 92, discount: '-28%', stockLeft: 14, specs: 'Micro-ATX · Doble M.2 · RGB Fusion 2.0', isOffer: true, isTrend: false },
+            { id: 'mb-7', name: 'ASRock B650M-HDV/M.2 Socket AM5 DDR5', subCategory: 'Placas Base', badge: 'ECONÓMICA AM5 -20%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 149, price: 119, discount: '-20%', stockLeft: 9, specs: 'Dr.MOS · PCIe 5.0 M.2 · Ideal Ryzen 5 7600', isOffer: true, isTrend: false },
+            { id: 'mb-8', name: 'MSI MPG B650I EDGE WIFI Mini-ITX Socket AM5 DDR5', subCategory: 'Placas Base', badge: 'MINI-ITX -17%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 279, price: 229, discount: '-17%', stockLeft: 3, specs: 'Formato compacto ITX · Ventilador activo en M.2', isOffer: true, isTrend: false },
+            { id: 'mb-9', name: 'ASUS PRIME B550M-A WIFI II Socket AM4', subCategory: 'Placas Base', badge: 'PRECIO BLACK -27%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 135, price: 98, discount: '-27%', stockLeft: 11, specs: 'Wi-Fi 6 integrado · BIOS FlashBack', isOffer: true, isTrend: false },
+            { id: 'mb-10', name: 'Gigabyte Z790 AORUS ELITE AX Socket 1700 DDR5', subCategory: 'Placas Base', badge: 'OFERTA -23%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 289, price: 222, discount: '-23%', stockLeft: 5, specs: '16+1+2 fases digitales · EZ-Latch Plus', isOffer: true, isTrend: false },
+
+            // --- Memorias RAM & Almacenamiento SSD (10 productos) ---
+            { id: 'mem-1', name: 'Corsair Vengeance DDR5 6000MHz 32GB (2x16GB) CL30 Negra', subCategory: 'Memorias RAM', badge: 'PACK DDR5 -26%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 149, price: 109, discount: '-26%', stockLeft: 14, specs: 'Latencia CL30 · AMD EXPO e Intel XMP 3.0', isOffer: true, isTrend: true },
+            { id: 'mem-2', name: 'WD_BLACK SN850X 2TB Disco SSD 7300MB/s NVMe PCIe 4.0 M.2', subCategory: 'Memorias RAM', badge: 'PRECIO MÍNIMO -48%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 249, price: 129, discount: '-48%', stockLeft: 5, specs: 'Compatible PC y PS5 · Game Mode 2.0', isOffer: true, isTrend: true },
+            { id: 'mem-3', name: 'Samsung 990 PRO 2TB SSD PCIe 4.0 NVMe M.2 7450MB/s', subCategory: 'Memorias RAM', badge: 'TOP SSD -35%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 229, price: 149, discount: '-35%', stockLeft: 7, specs: 'Controlador Samsung V-NAND · Máxima fiabilidad', isOffer: true, isTrend: true },
+            { id: 'mem-4', name: 'Kingston FURY Beast DDR5 6000MHz 32GB (2x16GB) CL30 RGB', subCategory: 'Memorias RAM', badge: 'RGB SYNC -23%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 155, price: 119, discount: '-23%', stockLeft: 9, specs: 'Infrared Sync Technology · Disipador perfil bajo', isOffer: true, isTrend: false },
+            { id: 'mem-5', name: 'Crucial P3 Plus 1TB Disco SSD 5000MB/s NVMe PCIe 4.0 M.2', subCategory: 'Memorias RAM', badge: 'CHOLLO 1TB -38%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 95, price: 58, discount: '-38%', stockLeft: 15, specs: 'Micron Advanced 3D NAND · Gran relación calidad/precio', isOffer: true, isTrend: false },
+            { id: 'mem-6', name: 'G.Skill Trident Z5 Neo RGB DDR5 6000MHz 64GB (2x32GB) CL30', subCategory: 'Memorias RAM', badge: '64GB PRO -20%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 269, price: 215, discount: '-20%', stockLeft: 4, specs: 'Optimizada para AMD Ryzen 7000/9000', isOffer: true, isTrend: false },
+            { id: 'mem-7', name: 'Corsair Vengeance LPX DDR4 3200MHz 32GB (2x16GB) CL16', subCategory: 'Memorias RAM', badge: 'DDR4 CHOLLO -32%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 89, price: 59, discount: '-32%', stockLeft: 13, specs: 'Perfil bajo 34mm · Ideal para placas AM4/LGA1700', isOffer: true, isTrend: false },
+            { id: 'mem-8', name: 'Kingston NV3 2TB SSD PCIe 4.0 NVMe M.2 6000MB/s', subCategory: 'Memorias RAM', badge: 'OFERTA 2TB -30%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 149, price: 104, discount: '-30%', stockLeft: 11, specs: 'Bajo consumo y temperatura · M.2 2280', isOffer: true, isTrend: false },
+            { id: 'mem-9', name: 'Corsair Vengeance RGB DDR5 6000MHz 32GB (2x16GB) Blanca', subCategory: 'Memorias RAM', badge: 'WHITE RGB', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 159, price: 126, discount: '-21%', stockLeft: 6, specs: '10 zonas LED RGB direccionables · iCUE', isOffer: false, isTrend: false },
+            { id: 'mem-10', name: 'Crucial T700 2TB SSD NVMe PCIe 5.0 12400MB/s con Disipador', subCategory: 'Memorias RAM', badge: 'PCIE 5.0 -25%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 359, price: 269, discount: '-25%', stockLeft: 3, specs: 'Velocidad extrema Gen5 · DirectStorage', isOffer: true, isTrend: false },
+
+            // --- Monitores Gaming (10 productos) ---
+            { id: 'mon-1', name: 'ASUS ROG Swift OLED PG27AQDM 27" QHD 240Hz 0.03ms G-Sync', subCategory: 'Monitores Gaming', badge: 'TENDENCIA OLED -32%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 1099, price: 749, discount: '-32%', stockLeft: 5, specs: 'Panel WOLED · Disipador personalizado · HDR10', isOffer: true, isTrend: true },
+            { id: 'mon-2', name: 'AOC Gaming 24G4X 23.8" LED Fast IPS FullHD 180Hz 0.5ms', subCategory: 'Monitores Gaming', badge: 'CHOLLO FLASH -38%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 189, price: 117, discount: '-38%', stockLeft: 11, specs: 'Peana ergonómica regulable · Adaptive Sync', isOffer: true, isTrend: true },
+            { id: 'mon-3', name: 'MSI MAG 274QRF QD E2 27" QHD Quantum Dot 180Hz 1ms', subCategory: 'Monitores Gaming', badge: 'QUANTUM DOT -27%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 369, price: 269, discount: '-27%', stockLeft: 7, specs: 'Rapid IPS · USB-C 65W PD · Color sRGB 150%', isOffer: true, isTrend: true },
+            { id: 'mon-4', name: 'Samsung Odyssey G5 LC34G55TWWPXEN 34" UltraWide QHD 165Hz Curvo', subCategory: 'Monitores Gaming', badge: 'ULTRAWIDE -31%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 449, price: 309, discount: '-31%', stockLeft: 4, specs: 'Curvatura 1000R · 3440x1440 · FreeSync Premium', isOffer: true, isTrend: false },
+            { id: 'mon-5', name: 'LG UltraGear 27GS75Q-B 27" IPS QHD 200Hz 1ms G-Sync', subCategory: 'Monitores Gaming', badge: '200HZ QHD -26%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 329, price: 242, discount: '-26%', stockLeft: 8, specs: 'HDR10 · Diseño sin bordes en 3 lados', isOffer: true, isTrend: false },
+            { id: 'mon-6', name: 'Alienware AW3423DWF 34" QD-OLED Curvo WQHD 165Hz 0.1ms', subCategory: 'Monitores Gaming', badge: 'QD-OLED -24%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 989, price: 749, discount: '-24%', stockLeft: 3, specs: 'DisplayHDR True Black 400 · Garantía quemados 3 años', isOffer: true, isTrend: true },
+            { id: 'mon-7', name: 'PcCom Elysium GO2780CV 27" LED FullHD 180Hz Curvo FreeSync', subCategory: 'Monitores Gaming', badge: 'MARCA PCCOM -34%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 179, price: 118, discount: '-34%', stockLeft: 12, specs: 'Panel VA 1500R · Bajo input lag', isOffer: true, isTrend: false },
+            { id: 'mon-8', name: 'Gigabyte M28U 28" IPS UHD 4K 144Hz 1ms KVM HDMI 2.1', subCategory: 'Monitores Gaming', badge: '4K 144HZ -28%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 599, price: 429, discount: '-28%', stockLeft: 5, specs: 'Switch KVM integrado · Ideal PC y PS5/Xbox', isOffer: true, isTrend: false },
+            { id: 'mon-9', name: 'BenQ ZOWIE XL2546X 24.5" Fast TN FullHD 240Hz DyAc 2', subCategory: 'Monitores Gaming', badge: 'ESPORTS PRO', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 549, price: 489, discount: '-11%', stockLeft: 4, specs: 'Estándar torneos CS2 y Valorant · Viseras laterales', isOffer: false, isTrend: false },
+            { id: 'mon-10', name: 'ASUS TUF Gaming VG249Q3A 23.8" Fast IPS FullHD 180Hz 1ms', subCategory: 'Monitores Gaming', badge: 'OFERTA -29%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 169, price: 119, discount: '-29%', stockLeft: 10, specs: 'ELMB Sync · Altavoces integrados', isOffer: true, isTrend: false },
+
+            // --- Periféricos Gaming (10 productos) ---
+            { id: 'per-1', name: 'Logitech G Pro X Superlight 2 Ratón Inalámbrico 32000 DPI Negro', subCategory: 'Periféricos Gaming', badge: 'ESPORTS #1 -29%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 169, price: 119, discount: '-29%', stockLeft: 8, specs: 'Peso 60g · Switches híbridos LIGHTFORCE · USB-C', isOffer: true, isTrend: true },
+            { id: 'per-2', name: 'Keychron Q1 Pro Teclado Mecánico Custom Inalámbrico Switches Red', subCategory: 'Periféricos Gaming', badge: 'CUSTOM KEYBOARD -20%', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 219, price: 175, discount: '-20%', stockLeft: 6, specs: 'Aluminio CNC · Gasket Mount · QMK/VIA', isOffer: false, isTrend: false },
+            { id: 'per-3', name: 'HyperX Cloud III Wireless Auriculares Gaming Inalámbricos Negro/Rojo', subCategory: 'Periféricos Gaming', badge: '120H BATERÍA -31%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 179, price: 123, discount: '-31%', stockLeft: 9, specs: 'DTS Headphone:X Spatial Audio · Drivers 53mm', isOffer: true, isTrend: true },
+            { id: 'per-4', name: 'Razer DeathAdder V3 Pro Ratón Gaming Inalámbrico 63g Negro', subCategory: 'Periféricos Gaming', badge: 'TOP RATÓN -27%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 159, price: 115, discount: '-27%', stockLeft: 7, specs: 'Sensor óptico Focus Pro 30K · 90h batería', isOffer: true, isTrend: false },
+            { id: 'per-5', name: 'Logitech G502 HERO Ratón Gaming 25600 DPI con Pesas Ajustables', subCategory: 'Periféricos Gaming', badge: 'CLÁSICO -50%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 89, price: 44, discount: '-50%', stockLeft: 15, specs: '11 botones programables · Sensor HERO 25K', isOffer: true, isTrend: true },
+            { id: 'per-6', name: 'SteelSeries Apex Pro TKL (2023) Teclado Mecánico OmniPoint 2.0', subCategory: 'Periféricos Gaming', badge: 'RAPID TRIGGER -25%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 219, price: 164, discount: '-25%', stockLeft: 5, specs: 'Actuación ajustable 0.1mm a 4.0mm · Pantalla OLED', isOffer: true, isTrend: true },
+            { id: 'per-7', name: 'Logitech G Pro X 2 Lightspeed Auriculares Inalámbricos Grafeno', subCategory: 'Periféricos Gaming', badge: 'PRO AUDIO -22%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 269, price: 209, discount: '-22%', stockLeft: 4, specs: 'Transductores PRO-G de grafeno 50mm · Bluetooth + 2.4GHz', isOffer: true, isTrend: false },
+            { id: 'per-8', name: 'Razer Huntsman V3 Pro Mini 60% Teclado Óptico Analógico', subCategory: 'Periféricos Gaming', badge: '60% ESPORTS -19%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 209, price: 169, discount: '-19%', stockLeft: 6, specs: 'Modo disparo rápido · Keycaps PBT doble inyección', isOffer: true, isTrend: false },
+            { id: 'per-9', name: 'Elgato Stream Deck MK.2 Controlador de Estudio 15 Teclas LCD', subCategory: 'Periféricos Gaming', badge: 'STREAMING -20%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 169, price: 135, discount: '-20%', stockLeft: 8, specs: 'Placa frontal intercambiable · OBS, Twitch, Discord', isOffer: true, isTrend: false },
+            { id: 'per-10', name: 'Newskill Kitsune V2 Silla Gaming Ergonómica Negra/Naranja', subCategory: 'Periféricos Gaming', badge: 'CHOLLO SILLA -52%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 249, price: 119, discount: '-52%', stockLeft: 3, specs: 'Pistón Clase 4 · Cojines lumbar y cervical', isOffer: true, isTrend: false },
+
+            // --- Portátiles Gaming & Consolas Portátiles (12 productos) ---
+            { id: 'lap-1', name: 'PcCom Revolt 4060 Intel Core i7-13700H / 32GB / 1TB SSD / RTX 4060 15.6"', subCategory: 'PcCom Ready', badge: 'BLACK FRIDAY -30%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 1429, price: 999, discount: '-30%', stockLeft: 6, specs: 'Pantalla 165Hz sRGB 100% · Chasis metálico ultraligero', isOffer: true, isTrend: true },
+            { id: 'lap-2', name: 'ASUS TUF Gaming A15 FA507NV Ryzen 7 7735HS / 16GB / 512GB / RTX 4060', subCategory: 'PcCom Ready', badge: 'TOP PORTÁTIL -29%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 1199, price: 849, discount: '-29%', stockLeft: 4, specs: '15.6" FHD 144Hz · Resistencia militar MIL-STD-810H', isOffer: true, isTrend: true },
+            { id: 'lap-3', name: 'Lenovo Legion Go Consola Portátil Ryzen Z1 Extreme / 16GB / 512GB', subCategory: 'Periféricos Gaming', badge: 'VIRAL GAMING -25%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 799, price: 599, discount: '-25%', stockLeft: 4, specs: 'Pantalla táctil 8.8" QHD+ 144Hz · Mandos extraíbles', isOffer: true, isTrend: true },
+            { id: 'lap-4', name: 'ASUS ROG Ally X Consola Portátil Ryzen Z1 Extreme / 24GB / 1TB SSD', subCategory: 'Periféricos Gaming', badge: 'BATERÍA 80WH -12%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 899, price: 789, discount: '-12%', stockLeft: 3, specs: '24GB RAM LPDDR5X · Doble puerto USB-C', isOffer: true, isTrend: true },
+            { id: 'lap-5', name: 'Lenovo LOQ 15IRX9 Intel Core i7-13650HX / 24GB / 1TB SSD / RTX 4060', subCategory: 'PcCom Ready', badge: 'OFERTA -26%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 1299, price: 959, discount: '-26%', stockLeft: 7, specs: '15.6" FHD 144Hz G-Sync · Chip IA LA1', isOffer: true, isTrend: false },
+            { id: 'lap-6', name: 'MSI Katana 15 B13VGK Intel Core i7-13700H / 16GB / 1TB SSD / RTX 4070', subCategory: 'PcCom Ready', badge: 'RTX 4070 -24%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 1599, price: 1215, discount: '-24%', stockLeft: 5, specs: 'Teclado RGB 4 zonas · Cooler Boost 5', isOffer: true, isTrend: false },
+            { id: 'lap-7', name: 'HP Victus 16-r0036ns Intel Core i5-13500H / 16GB / 512GB / RTX 4050', subCategory: 'PcCom Ready', badge: 'CHOLLO -31%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 1049, price: 719, discount: '-31%', stockLeft: 9, specs: 'Pantalla 16.1" 144Hz · OMEN Gaming Hub', isOffer: true, isTrend: false },
+            { id: 'lap-8', name: 'ASUS ROG Zephyrus G16 OLED Intel Core Ultra 9 / 32GB / 1TB / RTX 4070', subCategory: 'PcCom Ready', badge: 'ULTRALIGERO OLED', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 2399, price: 1999, discount: '-17%', stockLeft: 2, specs: 'Chasis aluminio CNC 1.85kg · Pantalla Nebula OLED 240Hz', isOffer: false, isTrend: false },
+            { id: 'lap-9', name: 'Acer Nitro V 15 ANV15-51 Intel Core i5-13420H / 16GB / 512GB / RTX 4050', subCategory: 'PcCom Ready', badge: 'PRECIO BLACK -29%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 949, price: 669, discount: '-29%', stockLeft: 10, specs: '15.6" IPS 144Hz · Doble ventilador', isOffer: true, isTrend: false },
+            { id: 'lap-10', name: 'MSI Claw A1M Consola Portátil Intel Core Ultra 7 / 16GB / 1TB SSD', subCategory: 'Periféricos Gaming', badge: 'CHOLLO CONSOLA -36%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 849, price: 539, discount: '-36%', stockLeft: 6, specs: 'Joysticks efecto Hall · Pantalla 7" FHD 120Hz', isOffer: true, isTrend: false },
+            { id: 'lap-11', name: 'PcCom Revolt 4070 Intel Core i9-14900HX / 32GB DDR5 / 2TB / RTX 4070 17.3"', subCategory: 'PcCom Ready', badge: 'PANTALLA 17.3" -22%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 1999, price: 1559, discount: '-22%', stockLeft: 3, specs: 'Panel QHD 240Hz · Teclado mecánico óptico', isOffer: true, isTrend: false },
+            { id: 'lap-12', name: 'Gigabyte G6 KF Intel Core i7-13620H / 16GB / 1TB SSD / RTX 4060 16"', subCategory: 'PcCom Ready', badge: '165HZ 16:10 -25%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 1199, price: 899, discount: '-25%', stockLeft: 7, specs: 'Formato 16:10 · Tecnología WINDFORCE', isOffer: true, isTrend: false }
         ];
+
+        // Aseguramos exactamente 100 productos únicos combinando baseProducts + 10 piezas extra de torres/refrigeración/fuentes
+        const extraProducts = [
+            { id: 'ext-1', name: 'Corsair 4000D Airflow Cristal Templado USB 3.2 Negra', subCategory: 'PcCom Ready', badge: 'CAJA TOP -27%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 109, price: 79, discount: '-27%', stockLeft: 12, specs: 'Panel frontal alto flujo · 2 ventiladores 120mm incluidos', isOffer: true, isTrend: true },
+            { id: 'ext-2', name: 'NZXT H6 Flow RGB Cristal Templado Doble Cámara Negra', subCategory: 'PcCom Ready', badge: 'PANORÁMICA -18%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 149, price: 122, discount: '-18%', stockLeft: 6, specs: 'Vista panorámica sin marcos · 3 ventiladores RGB en ángulo', isOffer: true, isTrend: true },
+            { id: 'ext-3', name: 'Lian Li O11 Vision Cristal Templado 3 Caras Blanca', subCategory: 'PcCom Ready', badge: 'SHOWCASE', badgeStyle: 'bg-zinc-800 text-bf-orange border border-bf-orange/40', oldPrice: 159, price: 139, discount: '-13%', stockLeft: 4, specs: 'Techo de cristal · Doble cámara para cableado limpio', isOffer: false, isTrend: false },
+            { id: 'ext-4', name: 'Tempest Shade RGB Torre ATX Cristal Templado Negra', subCategory: 'PcCom Ready', badge: 'CHOLLO TORRE -35%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 65, price: 42, discount: '-35%', stockLeft: 15, specs: '4 ventiladores FRGB incluidos · Filtro antipolvo magnético', isOffer: true, isTrend: false },
+            { id: 'ext-5', name: 'Noctua NH-D15 chromax.black Disipador CPU Doble Torre', subCategory: 'Refrigeración Líquida', badge: 'REY POR AIRE -15%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 119, price: 101, discount: '-15%', stockLeft: 5, specs: '2 ventiladores NF-A15 PWM · 6 heatpipes de cobre', isOffer: true, isTrend: false },
+            { id: 'ext-6', name: 'Thermalright Peerless Assassin 120 SE ARGB Disipador CPU', subCategory: 'Refrigeración Líquida', badge: 'CALIDAD/PRECIO -25%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 49, price: 36, discount: '-25%', stockLeft: 14, specs: 'Doble torre · 6 tubos de calor AGHP · Hasta 265W TDP', isOffer: true, isTrend: true },
+            { id: 'ext-7', name: 'NZXT C850 850W 80 Plus Gold Full Modular ATX 3.1', subCategory: 'Fuentes de Poder', badge: 'ATX 3.1 -21%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 159, price: 125, discount: '-21%', stockLeft: 7, specs: 'Cable 12V-2x6 incluido · Ventilador FDB 135mm', isOffer: true, isTrend: false },
+            { id: 'ext-8', name: 'Cooler Master MWE Gold 750 V2 750W 80 Plus Gold Modular', subCategory: 'Fuentes de Poder', badge: 'OFERTA -26%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 115, price: 85, discount: '-26%', stockLeft: 9, specs: 'Doble conector EPS · Resistencia térmica hasta 50°C', isOffer: true, isTrend: false },
+            { id: 'ext-9', name: 'Intel Core i7-13700KF 3.4 GHz / 5.4 GHz Socket 1700', subCategory: 'Procesadores', badge: 'LIQUIDACIÓN -29%', badgeStyle: 'bg-bf-neon text-white', oldPrice: 419, price: 295, discount: '-29%', stockLeft: 5, specs: '16 Núcleos (8P + 8E) · 24 Hilos', isOffer: true, isTrend: false },
+            { id: 'ext-10', name: 'AMD Ryzen 9 7900X 4.7 GHz / 5.6 GHz Socket AM5', subCategory: 'Procesadores', badge: '12 NÚCLEOS -27%', badgeStyle: 'bg-bf-orange text-white', oldPrice: 469, price: 339, discount: '-27%', stockLeft: 6, specs: '12 Núcleos · 24 Hilos · 76MB Caché', isOffer: true, isTrend: false }
+        ];
+
+        const productsDB = [...baseProducts, ...extraProducts]; // Total exacto: 100 productos
 
         // Estado del carrito y reseñas en vivo
         let cart = [];
@@ -708,13 +755,14 @@
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
             const emptyState = document.getElementById('emptySearch');
+            const countEl = document.getElementById('visibleCount');
 
             const filtered = productsDB.filter(p => {
                 const matchesTab =
                     currentFilter === 'todos' ||
                     (currentFilter === 'ofertas' && p.isOffer) ||
                     (currentFilter === 'tendencias' && p.isTrend) ||
-                    (currentFilter === 'catalogo' && p.category === 'catalogo');
+                    p.subCategory === currentFilter;
 
                 const query = currentSearch.toLowerCase().trim();
                 const matchesSearch =
@@ -725,6 +773,8 @@
 
                 return matchesTab && matchesSearch;
             });
+
+            if (countEl) countEl.textContent = filtered.length;
 
             if (filtered.length === 0) {
                 grid.innerHTML = '';
@@ -790,9 +840,9 @@
             currentFilter = filterType;
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 if (btn.getAttribute('data-filter') === filterType) {
-                    btn.className = 'filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-orange text-white shadow-lg shadow-bf-orange/25 transition-all';
+                    btn.className = 'filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-orange text-white shadow-lg shadow-bf-orange/25 transition-all';
                 } else {
-                    btn.className = 'filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all';
+                    btn.className = 'filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-bf-card text-zinc-300 hover:text-white border border-bf-border transition-all';
                 }
             });
             renderProducts();
@@ -894,39 +944,54 @@
 
             const templates = {
                 catalogo: `
-                    <span class="inline-block px-3 py-1 rounded-full bg-bf-orange/15 text-bf-orange text-xs font-black uppercase mb-3">Catálogo PcCom</span>
+                    <span class="inline-block px-3 py-1 rounded-full bg-bf-orange/15 text-bf-orange text-xs font-black uppercase mb-3">Catálogo PcCom (100 Productos)</span>
                     <h3 class="text-2xl font-black text-white">Familias Oficiales Urban & PcCom</h3>
-                    <p class="text-zinc-400 text-sm mt-1">Selecciona una categoría para filtrar el escaparate o añade directamente los superventas:</p>
+                    <p class="text-zinc-400 text-sm mt-1">Selecciona cualquier sección para filtrar al instante los 100 productos disponibles:</p>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 my-5">
-                        <button onclick="closeModal(); filterShowcase('catalogo'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                        <button onclick="closeModal(); filterShowcase('PcCom Ready'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
                             <span class="text-xl block mb-1">🖥️</span>
-                            <span class="text-xs font-bold text-white block">Ordenadores PcCom</span>
-                            <span class="text-[11px] text-bf-orange">Ready & Custom</span>
+                            <span class="text-xs font-bold text-white block">PcCom Ready</span>
+                            <span class="text-[11px] text-bf-orange">Torre & Portátiles</span>
                         </button>
-                        <button onclick="closeModal(); handleSearch('RTX'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
-                            <span class="text-xl block mb-1">⚡</span>
-                            <span class="text-xs font-bold text-white block">Tarjetas Gráficas</span>
-                            <span class="text-[11px] text-bf-orange">NVIDIA RTX 40/50</span>
-                        </button>
-                        <button onclick="closeModal(); handleSearch('Ryzen'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                        <button onclick="closeModal(); filterShowcase('Procesadores'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
                             <span class="text-xl block mb-1">🧠</span>
                             <span class="text-xs font-bold text-white block">Procesadores</span>
                             <span class="text-[11px] text-bf-orange">AMD X3D & Intel</span>
                         </button>
-                        <button onclick="closeModal(); handleSearch('Portátil'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
-                            <span class="text-xl block mb-1">💻</span>
-                            <span class="text-xs font-bold text-white block">Portátiles</span>
-                            <span class="text-[11px] text-bf-orange">PcCom Revolt & Pro</span>
+                        <button onclick="closeModal(); filterShowcase('Tarjetas Gráficas'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">⚡</span>
+                            <span class="text-xs font-bold text-white block">Tarjetas Gráficas</span>
+                            <span class="text-[11px] text-bf-orange">RTX 40 & Radeon RX</span>
                         </button>
-                        <button onclick="closeModal(); handleSearch('OLED'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                        <button onclick="closeModal(); filterShowcase('Fuentes de Poder'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">🔌</span>
+                            <span class="text-xs font-bold text-white block">Fuentes de Poder</span>
+                            <span class="text-[11px] text-bf-orange">80+ Gold & ATX 3.0</span>
+                        </button>
+                        <button onclick="closeModal(); filterShowcase('Refrigeración Líquida'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">❄️</span>
+                            <span class="text-xs font-bold text-white block">Refrig. Líquida</span>
+                            <span class="text-[11px] text-bf-orange">AIO 240/360mm & LCD</span>
+                        </button>
+                        <button onclick="closeModal(); filterShowcase('Placas Base'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">🎛️</span>
+                            <span class="text-xs font-bold text-white block">Placas Base</span>
+                            <span class="text-[11px] text-bf-orange">AM5, LGA1700 & AM4</span>
+                        </button>
+                        <button onclick="closeModal(); filterShowcase('Memorias RAM'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">💾</span>
+                            <span class="text-xs font-bold text-white block">RAM & SSD NVMe</span>
+                            <span class="text-[11px] text-bf-orange">DDR5 CL30 & Gen4/5</span>
+                        </button>
+                        <button onclick="closeModal(); filterShowcase('Monitores Gaming'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
                             <span class="text-xl block mb-1">🖵</span>
                             <span class="text-xs font-bold text-white block">Monitores</span>
                             <span class="text-[11px] text-bf-orange">OLED 240Hz / 4K</span>
                         </button>
-                        <button onclick="closeModal(); handleSearch('SSD'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
-                            <span class="text-xl block mb-1">💾</span>
-                            <span class="text-xs font-bold text-white block">Almacenamiento</span>
-                            <span class="text-[11px] text-bf-orange">NVMe Gen4 / Gen5</span>
+                        <button onclick="closeModal(); filterShowcase('Periféricos Gaming'); document.getElementById('escaparate').scrollIntoView({behavior:'smooth'})" class="p-3.5 rounded-xl bg-bf-card hover:border-bf-orange border border-bf-border text-left transition-all">
+                            <span class="text-xl block mb-1">🖱️</span>
+                            <span class="text-xs font-bold text-white block">Periféricos</span>
+                            <span class="text-[11px] text-bf-orange">Ratones, Teclados & Sillas</span>
                         </button>
                     </div>
                 `,
@@ -1190,6 +1255,13 @@
             const timerEl = document.getElementById('countdownTimer');
 
             setInterval(() => {
+                if (totalSeconds <= 0) totalSeconds = 24 * 3600;
+                totalSeconds--;
+                const h = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+                const m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+                const s = String(totalSeconds % 60).padStart(2, '0');
+                if (timerEl) timerEl.textContent = `${h}h : ${m}m : ${s}s`;
+            }, 1000);
         }
 
         // Inicialización al cargar
